@@ -27,7 +27,7 @@ define([], function ()
           {
             name: 'Line char',
             description: '',
-            id: 'lineChart',
+            id: 'dr0kiy5zq',
             imageSrc: 'http://lorempixel.com/output/technics-q-g-120-120-2.jpg'
           },
           {
@@ -94,7 +94,12 @@ define([], function ()
       {
         name: 'pie-donut',
         text: 'Pie & Donut',
-        items: []
+        items: [{
+            name: 'Random',
+            description: '',
+            id: '7txujpxgt',
+            imageSrc: 'http://lorempixel.com/output/technics-q-g-120-120-2.jpg'
+          }]
       },
       {
         name: 'scatter',
@@ -104,7 +109,12 @@ define([], function ()
       {
         name: 'other',
         text: 'Other',
-        items: []
+        items: [{
+            name: 'Random',
+            description: '',
+            id: '2mend6vf1',
+            imageSrc: 'http://lorempixel.com/output/technics-q-g-120-120-2.jpg'
+          }]
       }
     ],
     settingsTree: [

@@ -6,7 +6,42 @@ define(['backbone', 'model', 'bootstrap'], function (Backbone, Model) {
       this.template = _.template(options.template);
       this.templateConfig = options.templateConfig;
       this.app = options.app;
-      this.render();
+      console.log("init");
+      if(this.templateConfig && this.templateConfig[0] && this.templateConfig[0].name === 'user') {
+        var that = this;
+        console.log("/data/" + that.app.user.id);
+        $.ajax({
+          type: "GET",
+          url: "/data/" + that.app.user.id,
+          success: function(data) {
+            
+            that.templateConfig[0].items = data;
+            console.log(data);
+            that.render();
+            // var user = {};
+            // if(data.id) {
+            //   user = {
+            //     id: data.id,
+            //     name: data.name
+            //   }
+            // }
+            // that.app.user = user;
+            // // that.app.user = data;
+            // console.log(that.app.user);
+            // if(!that.app.user.id) {
+            //     alert("Wrong email or error");
+            //   }
+            //   else {
+            //     $("#login").modal('hide');
+            //   }
+          },
+          error: function(a, b, c) {
+            alert("Error" + a + b + c);
+          }
+        });
+      } else {
+          this.render();
+      }
     },
     events: {
       'click #makechart': 'makeChart',
@@ -43,6 +78,7 @@ define(['backbone', 'model', 'bootstrap'], function (Backbone, Model) {
             }
             else {
               $("#login").modal('hide');
+              that.app.router.navigate('', {trigger: true});
             }
         },
         error: function(a, b, c) {
@@ -86,9 +122,11 @@ define(['backbone', 'model', 'bootstrap'], function (Backbone, Model) {
     },
     selectChart: function (e) {
       var self = this;
+      console.log('/charts/'+ e.currentTarget.id);
       $.ajax({
-        url: '/js/app/temp/charts/' + e.currentTarget.id + '.js',
+        url: '/charts/'+ e.currentTarget.id,
         success: function (result) {
+          console.log(result);
           self.app.models.chartSettings = new Model.ChartSettingsCollection(JSON.parse(result));
           self.app.router.navigate('editor', {
             trigger: true

@@ -65,6 +65,7 @@ function savePublicChart(chart) {
 function populate(chart) {
 	MongoClient.connect(url, function(err, db) {
 		var collection = db.collection("charts");
+		console.log(chart);
 		collection.insert(chart, function(err, result) {
 			if (err) {
 				console.log(err);
@@ -164,7 +165,7 @@ function getChartByUrl(chartUrl, callback) {
 				var chart = result.length ? result[0] : undefined;
 				console.log("chart  :" + chart);
 				if (chart) {
-					callback(err, chart);
+					callback(err, chart.data);
 				}
 				db.close();
 			});

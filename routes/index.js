@@ -143,6 +143,7 @@ router.post('/save', function(req, res) {
 });
 
 router.post('/populate', function(req, res) {
+	console.log('POP');
 		var chartData = req.body;
 		console.log("Populate: /chart data:" + chartData.name + chartData.owner);
 		db.populate(chartData);
@@ -203,7 +204,7 @@ router.delete('/charts/:id', function(req, res) {
 });
 router.get('/charts/:id', function(req, res) {
 	db.getChartByUrl(req.params.id, function(err, chartData) {
-		res.send(chartData);
+		res.send(JSON.stringify(chartData));
 	});
 });
 
