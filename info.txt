@@ -3,4 +3,4 @@ http://stackoverflow.com/questions/20457849/passport-facebook-in-nodejs-profile-
 https://dashboard.heroku.com/apps/firstappfl3/resources
 
 
-git push heroku master
+git push heroku  master
