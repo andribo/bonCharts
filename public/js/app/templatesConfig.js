@@ -16,7 +16,7 @@ define([], function ()
             name: 'Simple bar',
             description: '',
             id: 'barChart',
-            imageSrc: ''
+            imageSrc: 'http://lorempixel.com/output/technics-q-g-120-120-2.jpg'
           }
         ]
       },
@@ -28,13 +28,61 @@ define([], function ()
             name: 'Line char',
             description: '',
             id: 'lineChart',
-            imageSrc: ''
+            imageSrc: 'http://lorempixel.com/output/technics-q-g-120-120-2.jpg'
           },
           {
             name: 'Random',
             description: '',
             id: 'randomChart',
-            imageSrc: ''
+            imageSrc: 'http://lorempixel.com/output/technics-q-g-120-120-2.jpg'
+          },
+          {
+            name: 'Line char',
+            description: '',
+            id: 'lineChart',
+            imageSrc: 'http://lorempixel.com/output/technics-q-g-120-120-2.jpg'
+          },
+          {
+            name: 'Random',
+            description: '',
+            id: 'randomChart',
+            imageSrc: 'http://lorempixel.com/output/technics-q-g-120-120-2.jpg'
+          },
+          {
+            name: 'Line char',
+            description: '',
+            id: 'lineChart',
+            imageSrc: 'http://lorempixel.com/output/technics-q-g-120-120-2.jpg'
+          },
+          {
+            name: 'Random',
+            description: '',
+            id: 'randomChart',
+            imageSrc: 'http://lorempixel.com/output/technics-q-g-120-120-2.jpg'
+          },
+          {
+            name: 'Line char',
+            description: '',
+            id: 'lineChart',
+            imageSrc: 'http://lorempixel.com/output/technics-q-g-120-120-2.jpg'
+          },
+          {
+            name: 'Random',
+            description: '',
+            id: 'randomChart',
+            imageSrc: 'http://lorempixel.com/output/technics-q-g-120-120-2.jpg'
+          },
+          {
+            name: 'Line char',
+            description: '',
+            id: 'lineChart',
+            imageSrc: 'http://lorempixel.com/output/technics-q-g-120-120-2.jpg'
+          },
+          {
+            name: 'Random',
+            description: '',
+            id: 'randomChart',
+            imageSrc: 'http://lorempixel.com/output/technics-q-g-120-120-2.jpg'
           }
         ]
       },

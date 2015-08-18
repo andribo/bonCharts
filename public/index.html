@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bonCharts</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <style></style>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/c3.css">
+  <!-- <link rel="stylesheet" href="css/local.css"> -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div id="page">
+    <!-- Trigger the modal with a button -->
+    <div class="modal fade bs-example-modal-sm" id="login" role="dialog" aria-labelledby="gridSystemModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="gridSystemModalLabel">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="col-md-5">
+                <a href="/facebook"><img src="http://techulus.com/buttons/fb.png" /></a>
+                <br/>
+                <br/>
+                <a href="/twitter"><img src="http://techulus.com/buttons/tw.png" /></a>
+                <br/>
+              </div>
+              <div class="col-md-7" style="border-left:1px solid #ccc;height:160px">
+                <form class="form-horizontal" id="loginForm" action="">
+                  <fieldset>
+                    <input id="username" name="username" placeholder="Enter Email" type="text" class="form-control input-md">
+                    <br/>
+                    <input id="password" name="password" type="password" placeholder="Enter Password" class="form-control input-md">
+                    <br/>
+                    <button type="button" id="checksubmit" name="singlebutton" class="btn btn-info btn-sm pull-right">Sign In</button>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!--  <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <div class="modal fade bs-example-modal-sm" id="register" role="dialog" aria-labelledby="gridSystemModalLabel">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="gridSystemModalLabel">Register</h4>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <form class="form-horizontal" action='/registration' method="POST">
+                <fieldset>
+                  <div class="control-group">
+                    <!-- Username -->
+                    <label class="control-label" for="name">Username</label>
+                    <div class="controls">
+                      <input type="text" id="name" name="name" placeholder="" class="input-xlarge">
+                      <p class="help-block">Username can contain any letters or numbers, without spaces</p>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <!-- E-mail -->
+                    <label class="control-label" for="email">E-mail</label>
+                    <div class="controls">
+                      <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
+                      <p class="help-block">Please provide your E-mail</p>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <!-- Password-->
+                    <label class="control-label" for="password">Password</label>
+                    <div class="controls">
+                      <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
+                      <p class="help-block">Password should be at least 4 characters</p>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <!-- Password -->
+                    <label class="control-label" for="password_confirm">Password (Confirm)</label>
+                    <div class="controls">
+                      <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="input-xlarge">
+                      <p class="help-block">Please confirm password</p>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <!-- Button -->
+                    <div class="controls">
+                      <button class="btn btn-success pull-right">Register</button>
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+          <!--  <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <div class="header">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">bonCharts</a>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+              <li><a href="#editor">Editor</a></li>
+              <li><a href="#about">About</a></li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+              <button type="button" class="btn btn-default" data-toggle="modal" data-target="#login">Log in</button>
+              <button type="button" class="btn btn-default" data-toggle="modal" data-target="#register">Register</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div id="content"></div>
+  </div>
+  <script src="js/app/temp/templates.js"></script>
+  <script data-main="js/main.js" src="js/lib/require.js"></script>
+</body>
+
+</html>

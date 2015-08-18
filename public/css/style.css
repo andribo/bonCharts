@@ -30,9 +30,52 @@ body {
 
 .content {
   /*top: 50px;*/
-  display: table-row;
-  height: 100%;
-  width: 100%;
+  /*display: table-row;*/
+  /*height: 100%;*/
+  /*width: 100%;*/
+}
+
+.col-centered {
+  float: none;
+  margin: 0 auto;
+}
+.select-chart-container {
+  /*width: 600px;*/
+  /*margin: 0 auto;*/
+}
+
+.chartitem {
+  float: left;
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 5px;
+  text-align: center;
+  /*vertical-align: middle;*/
+  /*border: solid 1px;*/
+  cursor: pointer;
+}
+
+.chartitem div {
+  position: absolute;
+  display: none;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  opacity: 0.8;
+}
+
+.chartitem:hover div {
+  display: block;
+}
+
+.chartitem:hover {
+  box-shadow: 0 0 2px #808080;
+}
+
+.select-chart-container .tab-content {
+  height: 300px;
 }
 
 .header,
@@ -47,7 +90,7 @@ body {
   /*width: 250px;*/
   overflow-y: auto;
   display: table-cell;
-  background-color: #C0C0C0;
+  /*background-color: #C0C0C0;*/
 }
 
 #accordion li.panel {
