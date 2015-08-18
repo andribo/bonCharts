@@ -95,6 +95,7 @@ function saveChart(user, chart) {
 
 function checkСorrectness(username, callback) {
 	/* connection to database */
+	console.log("Check Correctness");
 	MongoClient.connect(url, function(err, db) {
 		/* Error */
 		var user;
@@ -104,6 +105,7 @@ function checkСorrectness(username, callback) {
 			/* get or create users collection */
 			var collection = db.collection('users');
 			/* find user by username*/
+			console.log("USername" + username);
 			collection.find({
 				id: username
 			}).toArray(function(err, result) {

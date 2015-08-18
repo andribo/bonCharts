@@ -12,7 +12,65 @@ define(['backbone', 'model', 'bootstrap'], function (Backbone, Model) {
       'click #makechart': 'makeChart',
       'click .chartitem': 'selectChart',
       'click #selectchartcancel': 'selectChartCancel',
-      'click #charttabs a': 'selectChartType'
+      'click #charttabs a': 'selectChartType',
+      'click #checksubmit': 'logination'
+    },
+    logination: function (e) {
+      // e.stopPropagation();
+      // $("#myModal").modal('hide');
+      var that = this;
+      // var url = "/login/"+$('#username').val(); // the script where you handle the form input.
+      // console.log(url);
+     
+      
+       $.ajax({
+        type: "POST",
+        data: $('#loginForm').serialize(),
+        url: "/login",
+        success: function(data) {
+          var user = {};
+          if(data.id) {
+            user = {
+              id: data.id,
+              name: data.name
+            }
+          }
+          that.app.user = user;
+          // that.app.user = data;
+          console.log(that.app.user);
+          if(!that.app.user.id) {
+              alert("Wrong email or error");
+            }
+            else {
+              $("#login").modal('hide');
+            }
+        },
+        error: function(a, b, c) {
+          alert("Error" + a + b + c);
+        }
+      });
+      // $.ajax({
+      //      type: "GET",
+      //      url: url,
+      //      success: function(data)
+      //      {
+      //       console.log(data);
+      //         that.app.user = data;
+              
+      //         // $("#myModal").modal('hide');
+      //         // $("#login").modal('hide');
+      //       //  $('#login').remove();
+      //       if(!that.app.user.id) {
+      //         alert("Wrong email or error");
+      //       }
+      //       else {
+      //         $("#login").modal('hide');
+      //       }
+      //      },
+      //      error: function(a,b,c) {
+      //        alert("Error"+a+b+c);
+      //      }
+      //    });
     },
     render: function () {
       this.$content.empty();

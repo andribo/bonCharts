@@ -100,11 +100,15 @@ passport.use(new TwitterStrategy({
   }));
 
 passport.serializeUser(function(user, done) {
+  if(user.id) {
   done(null, user);
+}
 });
 
 passport.deserializeUser(function(obj, done) {
+  if(obj.id) {
   done(null, obj);
+}
 });
 
 app.use('/', routes);

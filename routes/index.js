@@ -14,24 +14,24 @@ router.get('/', function(req, res, next) {
 });
 
 //https://twitter.com/intent/tweet?url=http%3A%2F%2Flive.amcharts.com%2FmM222OD%2F&text=Build+your+own+free+chart+like+this+and+share+on+Twitter+or+add+as+interactive+widget+to+your+website.
-router.get('/login/:id', function(req, res, next) {
-	/* Entered login or password is incorrect */
-	console.log("Here" + req.params.id);
-	db.checkСorrectness(req.params.id, function(err, user) {
-    if (user) {
-   		var data = {
-   			'id': user.id,
-   			'name': user.name,
-   		}
-      res.setHeader('Content-Type', 'application/json');
-      res.send(JSON.stringify(data));
-    } else {
-      res.setHeader('Content-Type', 'application/json');
-      res.send(JSON.stringify({}));
-    }
-  });
+// router.get('/login/:id', function(req, res, next) {
+// 	/* Entered login or password is incorrect */
+// 	console.log("Here" + req.params.id);
+// 	db.checkСorrectness(req.params.id, function(err, user) {
+//     if (user) {
+//    		var data = {
+//    			'id': user.id,
+//    			'name': user.name,
+//    		}
+//       res.setHeader('Content-Type', 'application/json');
+//       res.send(JSON.stringify(data));
+//    	 } else {
+//       res.setHeader('Content-Type', 'application/json');
+//       res.send(JSON.stringify({}));
+//     }
+//   });
 	
-});
+// });
 /* POST user data. */
 router.post('/login', function(req, res, next) {
 	/* Passport function */
@@ -41,16 +41,23 @@ router.post('/login', function(req, res, next) {
 			return next(err);
 		}
 		/* Incorrect login or password */
+		console.log("STR");
+		console.log(user);
 		if (!user) {
-			var string = encodeURIComponent('something that would break');
-			return res.redirect('/login?valid=' + string);
+			res.setHeader('Content-Type', 'application/json');
+            res.send(JSON.stringify({}));
 		}
 		/* Correct login and password */
 		req.logIn(user, function(err) {
 			if (err) {
 				return next(err);
 			}
-			return res.redirect('/');
+			var data = {
+				id: user.id,
+				name: user.name
+			}
+			res.setHeader('Content-Type', 'application/json');
+            res.send(JSON.stringify(data));
 		});
 	})(req, res, next);
 });
