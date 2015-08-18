@@ -87,7 +87,7 @@ define(['backbone', 'model', 'bootstrap'], function (Backbone, Model) {
     selectChart: function (e) {
       var self = this;
       $.ajax({
-        url: '/js/app/temp/charts/' + e.curentTarget.id + '.js',
+        url: '/js/app/temp/charts/' + e.currentTarget.id + '.js',
         success: function (result) {
           self.app.models.chartSettings = new Model.ChartSettingsCollection(JSON.parse(result));
           self.app.router.navigate('editor', {
