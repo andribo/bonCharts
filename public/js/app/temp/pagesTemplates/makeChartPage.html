@@ -1,0 +1,40 @@
+<!-- <div class="header">
+  <nav>
+    <a href="#">Home</a>
+    <a href="#editor">Editor</a>
+    <a href="#about">About</a>
+  </nav>
+</div>
+ --><div class="content">
+  <h1>Select Chart Page</h1>
+  <div class="container">
+  <ul id="charttabs" class="nav nav-tabs">
+  <% _.each(chartList, function(elem) { %>
+    <li>
+      <a href="#<%= elem.name %>" id="<%= elem.name %>-tab" data-toggle="tab" aria-controls="<%= elem.name %>" aria-expanded="false"><%= elem.text %></a>
+    </li>
+  <%}) %>
+  </ul>
+  <div id="tabcontent" class="tab-content">
+    <% _.each(chartList, function(elem) { %>
+      <div role="tabpanel" class="tab-pane fade" id="<%= elem.name %>" aria-labelledby="<%= elem.name %>-tab">
+        <ul>
+          <% _.each(elem.items, function(item) { %>
+            <li id="<%= item.id %>" class="chartitem"><%= item.name %></li>
+          <%}) %>
+        </ul>
+      </div>
+    <%}) %>
+  </div>
+  </div>
+<!--   <ul>
+    <li id="lineChart" class="chartitem">line chart</li>
+    <li id="barChart" class="chartitem">bar chart</li>
+    <li id="areaChart" class="chartitem">area chart</li>
+    <li id="donutChart" class="chartitem">donut chart</li>
+    <li id="timeseriesChart" class="chartitem">timeseries chart</li>
+    <li id="timeseriesChart" class="chartitem">timeseries chart</li>
+    <li id="randomChart" class="chartitem">random chart</li>
+  </ul>
+ -->  <input type="button" id="selectchartcancel" value="Cancel">
+</div>

@@ -1,0 +1,6 @@
+https://www.mongolab.com/databases/heroku_19vp0cxf
+http://stackoverflow.com/questions/20457849/passport-facebook-in-nodejs-profile-fields
+https://dashboard.heroku.com/apps/firstappfl3/resources
+
+
+git push heroku master
