@@ -199,25 +199,53 @@ body {
 }
 
 #data-table {
-  /*margin: 10px;*/
+  margin: 15px;
   width: auto;
 }
 
 .delete-row {
   width: 0;
   padding: 0 !important;
-  position: relative;;
+}
+
+.delete-row, .delete-col {
+  position: relative;
+ }
+
+.delete-col-btn {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  width: 15px;
+  height: 15px;
+  border: solid 1px #808080;
+  border-radius: 5px;
+  background-color: lime;
+  /*background-image: url(../images/circle_x_small.png) no-repeat;*/
+  display: none;
+  cursor: pointer;
 }
 
 .delete-row-btn {
   position: absolute;
-  top: 1px;
-  left: -5px;
+  top: 10px;
+  left: -10px;
+  width: 15px;
+  height: 15px;
+  border: solid 1px #808080;
+  border-radius: 5px;
+  background-color: lime;
+  /*background-image: url(../images/circle_x_small.png) no-repeat;*/
   display: none;
+  cursor: pointer;
 }
 
 .right {
   float: right;
+}
+
+#data-table th:hover .delete-col-btn {
+  display: block;
 }
 
 #data-table tr:hover .delete-row-btn {

@@ -10,7 +10,8 @@ define(['backbone', 'd3', 'xlsx'], function (Backbone, d3, XLSX) {
     events: {
       'input #data-table': 'change',
       'change #data-file': 'fileLoad',
-      'click .delete-row-btn': 'deleteRow'
+      'click .delete-row-btn': 'deleteRow',
+      'click .delete-col-btn': 'deleteColumn'
       // 'change #dataurl': 'fileUrlLoad'
     },
     change: function (e) {
@@ -69,8 +70,31 @@ define(['backbone', 'd3', 'xlsx'], function (Backbone, d3, XLSX) {
     //   model.set('data_url', $(e.target).val());
     //   console.log($(e.target).val());
     // },
+    deleteColumn: function (e) {
+      var columnIndex = $(e.target).parent().index() - 1;
+      var model = this.collection.getModelByName('data');
+      var dataRows = model.get('data_rows').slice(0);
+
+      dataRows = dataRows.map(function (row) {
+        var newRow = [];
+        for (var i = 0; i < row.length; i += 1) {
+          if (i !== columnIndex) {
+            newRow.push(row[i]);
+          }
+        }
+        return newRow;
+      });
+      model.set('data_rows', dataRows);
+      this.render();
+
+      console.log(columnIndex);
+    },
     deleteRow: function (e) {
       var rowIndex = $(e.target).parent().parent().index();
+      var model = this.collection.getModelByName('data');
+      var dataRows = model.get('data_rows').slice(0);
+      dataRows.splice(rowIndex + 1, 1);
+      model.set('data_rows', dataRows);
       $(e.target).parent().parent().remove();
     },
     render: function (e) {
