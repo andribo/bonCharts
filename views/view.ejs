@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8" /> 
+	<link rel="stylesheet" href="css/c3.css">
+	<title><%= chartName %></title>
+</head>
+<body>
+<div id="bonchart"></div>
+<% if(!isPublic) {%>
+	<div>Data is not public</div>
+ <%} %>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="js/lib/d3.js"></script>
+  <script src="js/lib/c3.min.js"></script>
+  <script src="js/app/bonCharts.js"></script>
+  <script type="text/javascript">
+  <% if(isPublic) {%>
+	var data = JSON.parse('<%-chartData %>');
+	c3.generate(bonCharts.toC3(data));
+  <%} %>
+</script>
+</body>
+</html>

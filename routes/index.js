@@ -213,8 +213,11 @@ router.get('/public/:id', function(req, res) {
 router.get('/:id', function(req, res) {
 	var url = req.params.id;
 	db.getChartByUrl(url, function(err, result) {
+		console.log(result);
 		res.render('view', {
-			data: JSON.stringify(result.data)
+			chartData: JSON.stringify(result.data),
+			chartName: result.name,
+			isPublic: result['public']
 		});
 	});
 
