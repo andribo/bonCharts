@@ -1,7 +1,7 @@
 // В'юшка для побудови графіка
 // Ця в'юшка реагує на зміну нашої моделі (точніше, колекції моделей, але то не суттєво) і перерисовує графік.
 // Щоб перетворити дані з моделі в налаштування графіка, викликається метод configureChart
-define(['backbone', 'c3'], function (Backbone, c3) {
+define(['backbone', 'c3', 'bonCharts'], function (Backbone, c3, bonCharts) {
   return Backbone.View.extend({
     initialize: function (options) {
       this.el = options.el;
@@ -40,7 +40,7 @@ define(['backbone', 'c3'], function (Backbone, c3) {
         // var height = miscellaneousModel.get('size_height');
         // this.$el.append('<div id="bonchart"></div>');
         // try {
-          var c3config = this.collection.toC3()
+          var c3config = bonCharts.toC3(this.collection.toJSON());
           this.chart = c3.generate(c3config);
           // $('#bonchart').width(width);
           // $('#bonchart').height(height);

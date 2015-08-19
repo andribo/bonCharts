@@ -7,7 +7,8 @@ requirejs.config({
   // d3: { exports: 'd3' },
   // c3: { exports: 'c3' },
   bootstrap: { deps: ['jquery']},
-  xlsx: { exports: 'XLSX'}
+  xlsx: { exports: 'XLSX'},
+  bonCharts: { exports: 'bonCharts'}
  },
   paths: {
     jquery: '../lib/jquery-1.11.3',
@@ -22,6 +23,7 @@ requirejs.config({
     bootstrap: '../lib/bootstrap.min',
     // jszip: '../lib/jszip',
     
+    bonCharts: './bonCharts',
     app: './app',
     model: './model',
     view: './view',
