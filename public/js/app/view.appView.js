@@ -133,7 +133,12 @@ define(['backbone', 'model', 'bootstrap'], function (Backbone, Model) {
       });
     },
     publish: function() {
-      $('#chartURL').val(window.location.host + '/' + this.app.currentChart.id);
+      var url = 'http://' + window.location.host + '/' + this.app.currentChart.id;
+      var frame = '<iframe width="600" height="400" src="' + url + '" frameborder="0"></iframe>'
+      console.log(url);
+      console.log(frame);
+      $('#chartURL').val(url);
+      $('#chartFrame').val(frame);
     },
     generateUniqueID: function () {
       return Math.random().toString(36).substr(2, 9);
