@@ -138,8 +138,19 @@ define(['backbone', 'model', 'bootstrap'], function (Backbone, Model) {
       });
     },
     publish: function() {
-      var url = 'http://' + window.location.host + '/' + this.app.currentChart.id;
-      var frame = '<iframe width="600" height="400" src="' + url + '" frameborder="0"></iframe>'
+      var url,
+        model,
+        frameWidth,
+        frameHeight,
+        frame;
+      
+      url = 'http://' + window.location.host + '/' + this.app.currentChart.id;
+      
+      model = this.app.models.chartSettings.getModelByName('miscellaneous');
+      frameWidth = model.get('size_width') || 500;
+      frameHeight = model.get('size_height') || 350;
+
+      frame = '<iframe width="' + frameWidth + '" height="' + frameHeight + '" src="' + url + '" frameborder="0"></iframe>'
       console.log(url);
       console.log(frame);
       $('#chartURL').val(url);

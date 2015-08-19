@@ -128,12 +128,12 @@ var bonCharts = {
           case 'transition_duration':
             c3config.transition.duration = model[prop];
             break;
-          case 'size_width':
-            c3config.size.width = model[prop];
-            break;
-          case 'size_height':
-            c3config.size.height = model[prop];
-            break;
+          // case 'size_width':
+          //   c3config.size.width = model[prop];
+          //   break;
+          // case 'size_height':
+          //   c3config.size.height = model[prop];
+          //   break;
           case 'padding_top':
             c3config.padding.top = model[prop];
             break;
