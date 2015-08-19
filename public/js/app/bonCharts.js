@@ -586,15 +586,15 @@ var bonCharts = {
       });//.bind(c3config);
     })(this.getPropertyByName('tooltip_format_title', models), c3config.axis.x.type == 'timeseries', this.getPropertyByName('axis_x_tick_value_format', models)); //c3config.axis.x.type == 'timeseries'
 
-    // c3config.onresize = function () {
-    //   // console.log(this);
-    //   if (!c3config.size.height) {
-    //     var $chartContainerElement = $(this.api.element);
-    //     this.api.resize({
-    //       height: $chartContainerElement.parent().height()
-    //     });
-    //   }
-    // };
+    c3config.onresize = function () {
+      // console.log(this);
+      // if (!c3config.size.height) {
+        var $chartContainerElement = $('#bonchart');
+        this.api.resize({
+          height: $chartContainerElement.parent().height()
+        });
+      // }
+    };
 
     if (c3config.data.xs) {
       var value, sameX = true;

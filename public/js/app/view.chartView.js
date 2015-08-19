@@ -54,12 +54,12 @@ define(['backbone', 'c3', 'bonCharts'], function (Backbone, c3, bonCharts) {
           // $('#bonchart').width(width);
           // $('#bonchart').height(height);
           // console.log(this.chart);
-          if (!c3config.size.height) {
+          // if (!c3config.size.height) {
             var $chartContainerElement = $(this.chart.element);
-            // this.chart.resize({
-            //  height: $chartContainerElement.parent().height()
-            // });
-          }
+            this.chart.resize({
+             height: $chartContainerElement.parent().height()
+            });
+          // }
         // } catch (error) {
         //   console.log(error);
         // }
