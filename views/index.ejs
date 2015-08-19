@@ -71,17 +71,35 @@
       <div class="modal-body">
         <div class="container-fluid">
            
+
+            
+  <div class="form-group">
+    <label for="exampleInputPassword1">Name:</label>
+    <input id="chartName" name="chartName" placeholder="Chart name" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="chartDescription">Email address</label>
+    <textarea id="chartDescription" name="chartDescription" rows="5" placeholder="Chart description" class="form-control"></textarea>
+  </div>
+  
+  <div>
+    <label>
+      <input id="chartPublic" name="chartPublic" type="checkbox"> Make public
+    </label>
+  </div>
+ <button type="button" id="submitChart" name="singlebutton" class="btn btn-info btn-sm pull-right">Save</button>
      
      
-        <fieldset>
-          <input id="chartName" name="chartName" placeholder="Chart name" type="text" class="form-control input-md">
+        <!-- <fieldset>
+          <input id="chartName" name="chartName" placeholder="Chart name" type="text" class="form-control">
           <br/>
-          <textarea id="chartDescription" name="chartDescription" rows="5" placeholder="Chart description" class="form-control input-md"></textarea>
+          <textarea id="chartDescription" name="chartDescription" rows="5" placeholder="Chart description" class="form-control"></textarea>
           <br/>
+
           <input id="chartPublic" name="chartPublic" type="checkbox"  class="form-control input-md"/>
           <button type="button" id="submitChart" name="singlebutton" class="btn btn-info btn-sm pull-right">Save</button>
         </fieldset>
-
+ -->
   
         </div>
       </div>
@@ -103,16 +121,17 @@
       <div class="modal-body">
         <div class="container-fluid">
         <fieldset>
-           <div class='row' >
-           <div class="col-md-9 col-sm-12" >
+           <div class='row'>
+           <div class="col-md-12 col-xs-12" style='margin-bottom: 15px'>
                <input id="chartURL" name="chartURL" placeholder="Chart name" type="text" class="form-control input-md">
           </div>
-           <div class="col-md-3 col-sm-12">
-               <input id="redirectbtn" name="redirectbtn" value = "Go" type="button" class="btn input-md">
+          <br>
+           <div class="col-md-4 col-md-offset-4 col-xs-4 col-xs-offset-4">
+               <input id="redirectbtn" name="redirectbtn" value = "View" type="button" class="btn btn-md btn-primary">
           </div>
           </div>
 
-          <br/>
+          <hr/>
           <textarea id="chartFrame" name="chartDescription" rows="5" placeholder="Chart description" class="form-control input-md"></textarea>
           <br/>
         </fieldset>
@@ -165,17 +184,7 @@
         <input type="password" id="password" name="password" placeholder="" class="input-xlarge" pattern='^([a-zA-Z0-9@*#]{8,15})$' required>
         <p class="help-block">Password should be at least 4 characters</p>
       </div>
-    </div>
- 
-    <div class="control-group">
-      <!-- Password -->
-      <label class="control-label"  for="password_confirm">Password (Confirm)</label>
-      <div class="controls">
-        <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="input-xlarge" required>
-        <p class="help-block">Please confirm password</p>
-      </div>
-    </div>
- 
+    </div> 
     <div class="control-group">
       <!-- Button -->
       <div class="controls">

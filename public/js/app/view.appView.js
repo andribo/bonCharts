@@ -129,7 +129,6 @@ define(['backbone', 'model', 'bootstrap'], function (Backbone, Model) {
       return this;
     },
     redirectToView: function() {
-
       window.open($('#chartURL').val());
     },
     makeChart: function () {
