@@ -11,12 +11,20 @@
   <link rel="stylesheet" href="css/c3.css">
   <!-- <link rel="stylesheet" href="css/local.css"> -->
   <link rel="stylesheet" href="css/style.css">
+  <style>
+   /* body { 
+  background: url(http://bcs.bravocs.net/wp-content/uploads/2013/06/iain_craig_website_backgrounds-01.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}*/
+  </style>
 </head>
 
 <body>
-<input type='button' value="toDataBase" onclick="toDB()"/>
+<!-- <input type='button' value="toDataBase" onclick="toDB()"/> -->
 <div id="page">
-    
 <!-- Trigger the modal with a button -->
 <div class="modal fade bs-example-modal-sm" id="login" role="dialog" aria-labelledby="gridSystemModalLabel">
   <div class="modal-dialog modal-lg" role="document">
@@ -69,7 +77,7 @@
       <!-- Username -->
       <label class="control-label"  for="name">Username</label>
       <div class="controls">
-        <input type="text" id="name" name="name" placeholder="" class="input-xlarge">
+        <input type="text" id="name" name="name" placeholder="" class="input-xlarge" pattern ='^[a-zA-Z0-9]+$'required>
         <p class="help-block">Username can contain any letters or numbers, without spaces</p>
       </div>
     </div>
@@ -78,7 +86,7 @@
       <!-- E-mail -->
       <label class="control-label" for="email">E-mail</label>
       <div class="controls">
-        <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
+        <input type="email" id="email" name="email" placeholder="" class="input-xlarge" required>
         <p class="help-block">Please provide your E-mail</p>
       </div>
     </div>
@@ -87,7 +95,7 @@
       <!-- Password-->
       <label class="control-label" for="password">Password</label>
       <div class="controls">
-        <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
+        <input type="password" id="password" name="password" placeholder="" class="input-xlarge" pattern='^([a-zA-Z0-9@*#]{8,15})$' required>
         <p class="help-block">Password should be at least 4 characters</p>
       </div>
     </div>
@@ -96,7 +104,7 @@
       <!-- Password -->
       <label class="control-label"  for="password_confirm">Password (Confirm)</label>
       <div class="controls">
-        <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="input-xlarge">
+        <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="input-xlarge" required>
         <p class="help-block">Please confirm password</p>
       </div>
     </div>
@@ -134,6 +142,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#">bonCharts</a>
+<!--       <image src="http://icons.iconarchive.com/icons/double-j-design/origami-colored-pencil/256/blue-chart-icon.png"/> -->
     </div>
 
     

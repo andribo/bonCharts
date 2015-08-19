@@ -16,7 +16,7 @@ define([], function ()
             name: 'Simple bar',
             description: '',
             id: 'barChart',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: 'http://lorempixel.com/output/technics-q-g-120-120-2.jpg'
           }
         ]
       },
@@ -28,61 +28,61 @@ define([], function ()
             name: 'Line char',
             description: '',
             id: 'dr0kiy5zq',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: 'http://lorempixel.com/output/technics-q-g-120-120-2.jpg'
           },
           {
             name: 'Random',
             description: '',
             id: 'randomChart',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: 'http://lorempixel.com/output/technics-q-g-120-120-2.jpg'
           },
           {
             name: 'Line char',
             description: '',
             id: 'lineChart',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: 'http://lorempixel.com/output/technics-q-g-120-120-2.jpg'
           },
           {
             name: 'Random',
             description: '',
             id: 'randomChart',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: 'http://lorempixel.com/output/technics-q-g-120-120-2.jpg'
           },
           {
             name: 'Line char',
             description: '',
             id: 'lineChart',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: 'http://lorempixel.com/output/technics-q-g-120-120-2.jpg'
           },
           {
             name: 'Random',
             description: '',
             id: 'randomChart',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: 'http://lorempixel.com/output/technics-q-g-120-120-2.jpg'
           },
           {
             name: 'Line char',
             description: '',
             id: 'lineChart',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: 'http://lorempixel.com/output/technics-q-g-120-120-2.jpg'
           },
           {
             name: 'Random',
             description: '',
             id: 'randomChart',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: 'http://lorempixel.com/output/technics-q-g-120-120-2.jpg'
           },
           {
             name: 'Line char',
             description: '',
             id: 'lineChart',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: 'http://lorempixel.com/output/technics-q-g-120-120-2.jpg'
           },
           {
             name: 'Random',
             description: '',
             id: 'randomChart',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: 'http://lorempixel.com/output/technics-q-g-120-120-2.jpg'
           }
         ]
       },
@@ -98,7 +98,7 @@ define([], function ()
             name: 'Random',
             description: '',
             id: '7txujpxgt',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: 'http://lorempixel.com/output/technics-q-g-120-120-2.jpg'
           }]
       },
       {
@@ -113,7 +113,7 @@ define([], function ()
             name: 'Random',
             description: '',
             id: '2mend6vf1',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: 'http://lorempixel.com/output/technics-q-g-120-120-2.jpg'
           }]
       }
     ],
