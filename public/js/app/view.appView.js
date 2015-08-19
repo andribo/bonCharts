@@ -19,7 +19,7 @@ define(['backbone', 'model', 'bootstrap'], function (Backbone, Model) {
             that.templateConfig[0].items = data;
             console.log(data);
             that.render();
-            if (that.app.user.id) {
+            if (that.app.user.id && that.templateConfig[0].items.length) {
               $('.nav-tabs a[href="#user"]').tab('show');
             } else {
               $('.nav-tabs a[href="#bar"]').tab('show');
@@ -133,7 +133,7 @@ define(['backbone', 'model', 'bootstrap'], function (Backbone, Model) {
       });
     },
     publish: function() {
-      alert('publish');
+      $('#chartURL').val(window.location.host + '/' + this.app.currentChart.id);
     },
     generateUniqueID: function () {
       return Math.random().toString(36).substr(2, 9);
@@ -166,6 +166,8 @@ define(['backbone', 'model', 'bootstrap'], function (Backbone, Model) {
             "owner": owner,
             "data": data
       };
+      this.app.currentChart = toServer;
+
       console.log("TO SERVER");
       var request = $.ajax({
             url: "/save",
