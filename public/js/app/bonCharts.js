@@ -591,7 +591,7 @@ var bonCharts = {
       // if (!c3config.size.height) {
         var $chartContainerElement = $('#bonchart');
         this.api.resize({
-          height: $chartContainerElement.parent().height()
+          height: $chartContainerElement.parent().height() - 10
         });
       // }
     };

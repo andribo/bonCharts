@@ -113,6 +113,7 @@ var templates = {
   // +   '<label class="data-import">Add columns headers<input type="checkbox"></label>'
   + '</div>'
   // + '<div class="data-view-content panel-body">'
+  + '<div class="settings-body">'
   +   '<table id="data-table" class="table table-bordered table-striped table-hover">'
   +     '<thead>'
   +       '<tr>'
@@ -133,8 +134,8 @@ var templates = {
   +         '</tr>'
   +       '<% } %>'
   +    '<% }) %>'
-  +   '</table>',
-  // + '</div>',
+  +   '</table>'
+  + '</div>',
   chart:
     '<div class="panel-heading clearfix">'
   +   '<div class="right">'
@@ -142,7 +143,7 @@ var templates = {
   +    '<button class="btn btn-default" type="button" id="publishbtn">Publish</button>'
   +   '</div>'
   + '</div>'
-  + '<div class="settings-body">'
+  + '<div class="chart-body">'
   +   '<div id="bonchart"></div>'
   + '</div>'
 };

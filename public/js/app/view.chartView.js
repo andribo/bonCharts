@@ -57,7 +57,7 @@ define(['backbone', 'c3', 'bonCharts'], function (Backbone, c3, bonCharts) {
           // if (!c3config.size.height) {
             var $chartContainerElement = $(this.chart.element);
             this.chart.resize({
-             height: $chartContainerElement.parent().height()
+             height: $chartContainerElement.parent().height() - 10
             });
           // }
         // } catch (error) {

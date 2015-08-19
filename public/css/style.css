@@ -63,6 +63,7 @@ body {
 
 .settings-body {
   overflow-y: auto;
+  height: 100%;
 }
 
 #settings .list-group-item:first-child {
@@ -90,15 +91,26 @@ body {
 
 #chart-view {
   height: 65%;
-    display: flex;
+  display: flex;
   flex-direction: column;
   overflow-y: auto;
-  /*height: 100%;*/
+  min-height: 200px;
+}
+
+.chart-body {
+  overflow-y: hidden;
+  height: 100%;
 }
 
 #data-view {
   height: 35%;
-  min-height: 50px;  
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-page .panel-heading {
+  min-height: 55px;
 }
 
 .col-centered {
