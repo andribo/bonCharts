@@ -7,6 +7,7 @@
     <div class="panel-body">
       <ul id="charttabs" class="nav nav-tabs">
       <% _.each(chartList, function(elem) { %>
+      <% if (elem.name === 'user' && elem.items.length === 0) { return; }%>
         <li>
           <a href="#<%= elem.name %>" id="<%= elem.name %>-tab" data-toggle="tab" aria-controls="<%= elem.name %>" aria-expanded="false"><%= elem.text %></a>
         </li>
@@ -14,6 +15,7 @@
       </ul>
       <div id="tabcontent" class="tab-content">
         <% _.each(chartList, function(elem) { %>
+          <% if (elem.name === 'user' && elem.items.length === 0) { return; }%>
           <div role="tabpanel" class="tab-pane fade" id="<%= elem.name %>" aria-labelledby="<%= elem.name %>-tab">
             <ul>
               <% _.each(elem.items, function(item) { %>
