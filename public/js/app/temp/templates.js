@@ -140,7 +140,7 @@ var templates = {
     '<div class="panel-heading clearfix">'
   +   '<div class="right">'
   +    '<button class="btn btn-default" type="button" id="savebtn" data-toggle="modal" data-target="#save">Save</button>'
-  +    '<button class="btn btn-default" type="button" id="publishbtn">Publish</button>'
+  +    '<button class="btn btn-default" type="button" id="publishbtn" data-toggle="modal" data-target="#publishChart">Publish</button>'
   +   '</div>'
   + '</div>'
   + '<div class="chart-body">'

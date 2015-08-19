@@ -11,7 +11,7 @@ define(['backbone', 'c3', 'bonCharts'], function (Backbone, c3, bonCharts) {
       this.listenTo(this.collection, 'change add remove', this.render);
     },
     events: {
-      'click #publishbtn': 'publishChart',
+     // 'click #publishbtn': 'publishChart',
       'click #savebtn': 'saveChart'
       
     },
@@ -23,11 +23,11 @@ define(['backbone', 'c3', 'bonCharts'], function (Backbone, c3, bonCharts) {
       $('#chartPublic').prop('checked', this.app.currentChart['public']);
       console.log(this.app.currentChart);
     },
-    publishChart: function (e) {
-      this.app.router.navigate('publish', {
-        trigger: true
-      });
-    },
+    // publishChart: function (e) {
+    //   this.app.router.navigate('publish', {
+    //     trigger: true
+    //   });
+    // },
     
 
     render: function () {

@@ -19,6 +19,11 @@ define(['backbone', 'model', 'bootstrap'], function (Backbone, Model) {
             that.templateConfig[0].items = data;
             console.log(data);
             that.render();
+            if (that.app.user.id) {
+              $('.nav-tabs a[href="#user"]').tab('show');
+            } else {
+              $('.nav-tabs a[href="#bar"]').tab('show');
+            }
             // var user = {};
             // if(data.id) {
             //   user = {
@@ -50,6 +55,7 @@ define(['backbone', 'model', 'bootstrap'], function (Backbone, Model) {
       'click #selectchartcancel': 'selectChartCancel',
       'click #charttabs a': 'selectChartType',
       'click #checksubmit': 'logination',
+      'click #publishbtn': 'publish',
       'mousedown #submitChart': 'submitChart'
     },
     logination: function (e) {
@@ -125,6 +131,9 @@ define(['backbone', 'model', 'bootstrap'], function (Backbone, Model) {
       this.app.router.navigate('makechart', {
         trigger: true
       });
+    },
+    publish: function() {
+      alert('publish');
     },
     generateUniqueID: function () {
       return Math.random().toString(36).substr(2, 9);
