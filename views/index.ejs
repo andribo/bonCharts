@@ -103,7 +103,15 @@
       <div class="modal-body">
         <div class="container-fluid">
         <fieldset>
-          <input id="chartURL" name="chartURL" placeholder="Chart name" type="text" class="form-control input-md">
+           <div class='row' >
+           <div class="col-md-9 col-sm-12" >
+               <input id="chartURL" name="chartURL" placeholder="Chart name" type="text" class="form-control input-md">
+          </div>
+           <div class="col-md-3 col-sm-12">
+               <input id="redirectbtn" name="redirectbtn" value = "Go" type="button" class="btn input-md">
+          </div>
+          </div>
+
           <br/>
           <textarea id="chartFrame" name="chartDescription" rows="5" placeholder="Chart description" class="form-control input-md"></textarea>
           <br/>

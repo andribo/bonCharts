@@ -56,6 +56,7 @@ define(['backbone', 'model', 'bootstrap'], function (Backbone, Model) {
       'click #charttabs a': 'selectChartType',
       'click #checksubmit': 'logination',
       'click #publishbtn': 'publish',
+      'click #redirectbtn': 'redirectToView',
       'mousedown #submitChart': 'submitChart'
     },
     logination: function (e) {
@@ -127,6 +128,10 @@ define(['backbone', 'model', 'bootstrap'], function (Backbone, Model) {
       }));
       return this;
     },
+    redirectToView: function() {
+
+      window.open($('#chartURL').val());
+    },
     makeChart: function () {
       this.app.router.navigate('makechart', {
         trigger: true
@@ -183,6 +188,7 @@ define(['backbone', 'model', 'bootstrap'], function (Backbone, Model) {
             dataType: "json",
       });
       console.log(toServer);
+      $('#publishbtn').prop('disabled', false);
     },
     selectChart: function (e) {
       var self = this;
