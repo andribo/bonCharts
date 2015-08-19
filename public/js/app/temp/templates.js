@@ -1,6 +1,7 @@
 var templates = {
   settingsTree: 
     // '<nav class="navbar navbar-inverse navbar-fixed-top">'
+    // '<div class="panel panel-default">'
    '<ul class="nav nav-stacked" id="accordion">'
   +   '<% _.each(settingsTree, function(elem, index) { %>'
   +     '<% if (!elem.hidden) { %>'
@@ -27,6 +28,7 @@ var templates = {
   +     '<% } %>'
   +   '<% }); %>'
   + '</ul>',
+  // + '</div>',
   // + '</nav>',
   //   '<ul>'
   // +   '<% _.each(settingsTree, function(elem) { %>'
@@ -56,9 +58,8 @@ var templates = {
   // + '</ul>',
   settings: 
     '<div class="panel-heading"><h3 class="panel-title"><%= settings[0] %></h3></div>'
-    // '<h3><%= settings[0] %></h3>'
-  // + '<div class="panel-body">'    
-  + '<ul class="form-horizontal list-group">'
+  + '<div class="settings-body">'    //  class="panel-body"
+  + '<ul class="form-horizontal">' //list-group
   +   '<% _.each(settings, function(elem, index) {%>'
   +     '<% if (index === 0) { return; }%>'
   +     '<% if (!elem.hidden) { %>'
@@ -69,8 +70,8 @@ var templates = {
   +           '<input class="form-control setting-property" type="number" id="<%= elem.name %>" min="<%= elem.min %>" max="<%= elem.max %>" step="<%= elem.step %>" value="<%= data[elem.name] %>">'
   +         '</div>'
   +       '<% } else if (elem.type === "checkbox") { %>'
-  +         '<label for="<%= elem.name %>" class="col-sm-7 control-label"><%= elem.title %></label>'
-  +         '<div class="col-sm-5">'
+  +         '<label for="<%= elem.name %>" class="col-sm-8 control-label"><%= elem.title %></label>'
+  +         '<div class="col-sm-4">'
   +           '<input class="checkbox setting-property" type="checkbox" id="<%= elem.name %>" <% if (data[elem.name]) { %>checked<% } %>>'
   +         '</div>'
   +       '<% } else if (elem.type === "select") { %>'
@@ -101,8 +102,8 @@ var templates = {
   +     '</li>'
   +     '<% } %>'
   +   '<% }) %>'
-  + '</ul>',
-  // + '</div>',
+  + '</ul>'
+  + '</div>',
   data:
     '<div class="data-view-header panel-heading">'
   +   '<input class="btn btn-default" type="button" value="Add Column"> '
@@ -137,8 +138,8 @@ var templates = {
   chart:
     '<div class="panel-heading clearfix">'
   +   '<div class="right">'
-  +    '<input class="btn btn-default" type="button" id="savebtn" value="Save"> '
-  +    '<input class="btn btn-default" type="button" id="publishbtn" value="Publish"> '
+  +    '<button class="btn btn-default" type="button" id="savebtn"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Save</button>'
+  +    '<button class="btn btn-default" type="button" id="publishbtn"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Publish</button>'
   +   '</div>'
   + '</div>'
   + '<div id="bonchart"></div>'

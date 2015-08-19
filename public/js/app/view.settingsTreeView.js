@@ -35,6 +35,7 @@ define(['backbone', 'settingsView'], function (Backbone, SettingsView) {
       if (model) {
         if (this.settingsView) {
           this.settingsView.remove();
+          this.$settings.empty();
         }
 
         viewOptions.model = model;
@@ -47,7 +48,7 @@ define(['backbone', 'settingsView'], function (Backbone, SettingsView) {
         }
 
         this.settingsView = new SettingsView(viewOptions);
-        this.$settings.append(this.settingsView.render().el);
+        this.$settings.append(this.settingsView.render().$el);
         if (isSeriesModel) {
           this.settingsView.updateSeriesDataXYControls();
         }

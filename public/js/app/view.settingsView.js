@@ -2,7 +2,7 @@
 define(['backbone'], function (Backbone) {
   return Backbone.View.extend({
     tagName: 'div',
-    className: 'panel panel-default',
+    className: 'settings panel panel-default',
     initialize: function (options) {
       this.model = options.model;
       this.name = options.model.get('name');
