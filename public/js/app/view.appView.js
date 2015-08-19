@@ -1,6 +1,7 @@
 define(['backbone', 'model', 'bootstrap'], function (Backbone, Model) {
   return Backbone.View.extend({
     initialize: function (options) {
+      console.log("INITCCC")
       this.el = options.el;
       this.$content = this.$el.find('#content')
       this.template = _.template(options.template);
@@ -48,7 +49,8 @@ define(['backbone', 'model', 'bootstrap'], function (Backbone, Model) {
       'click .chartitem': 'selectChart',
       'click #selectchartcancel': 'selectChartCancel',
       'click #charttabs a': 'selectChartType',
-      'click #checksubmit': 'logination'
+      'click #checksubmit': 'logination',
+      'mousedown #submitChart': 'submitChart'
     },
     logination: function (e) {
       // e.stopPropagation();
@@ -120,6 +122,48 @@ define(['backbone', 'model', 'bootstrap'], function (Backbone, Model) {
         trigger: true
       });
     },
+    generateUniqueID: function () {
+      return Math.random().toString(36).substr(2, 9);
+    },
+    iven : [],
+    submitChart: function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      this.iven.push(e);
+      for(var i = 0; i < this.iven.length; ++i) {
+        console.log(this.iven[i]);
+      }
+      $('#save').modal('hide');
+      var owner = this.app.user.id;
+      var name = $('#chartName').val();
+      var description = $('#chartDescription').val();
+      var publicChart =  $('#chartPublic').prop('checked');
+      var data = this.app.models.chartSettings.toJSON();
+      var id = this.app.currentChart.id;
+      console.log(owner,  this.app.currentChart.owner, id);
+      if(owner !== this.app.currentChart.owner) {
+        id = this.generateUniqueID();
+      }
+
+      var toServer = {
+            "id": id,
+            "name": name,
+            "description": description,
+            "public": publicChart,
+            "owner": "test@ukr.net",
+            "data": data
+      };
+      console.log("TO SERVER");
+      var request = $.ajax({
+            url: "/save",
+            async: true,
+            type: "POST",
+            data: JSON.stringify(toServer),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+      });
+      console.log(toServer);
+    },
     selectChart: function (e) {
       var self = this;
       console.log('/charts/'+ e.currentTarget.id);
@@ -131,6 +175,8 @@ define(['backbone', 'model', 'bootstrap'], function (Backbone, Model) {
           self.app.currentChart.name = chartData.name;
           self.app.currentChart.description = chartData.description;
           self.app.currentChart['public'] = chartData['public'];
+          self.app.currentChart.owner = chartData.owner;
+          self.app.currentChart.id = e.currentTarget.id;
           self.app.models.chartSettings = new Model.ChartSettingsCollection(chartData.data);
           self.app.router.navigate('editor', {
             trigger: true

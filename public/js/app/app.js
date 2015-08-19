@@ -39,6 +39,9 @@ define(['backbone', 'model', 'view', 'templatesConfig'], function (Backbone, Mod
           'publish': 'publishPage'
         },
         createAppView: function (template, templateConfig) {
+          if (thatApp.views.appView) {
+            thatApp.views.appView.undelegateEvents();
+          }
           thatApp.views.appView = new View.AppView({
             el: thatApp.$container,
             template: template,

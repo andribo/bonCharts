@@ -13,11 +13,11 @@ define(['backbone', 'c3', 'bonCharts'], function (Backbone, c3, bonCharts) {
     events: {
       'click #publishbtn': 'publishChart',
       'click #savebtn': 'saveChart'
+      
     },
     chart: null,
     timeOut: undefined,
     saveChart: function() {
-      console.log()
       $('#chartName').val(this.app.currentChart.name);
       $('#chartDescription').val(this.app.currentChart.description);
       $('#chartPublic').prop('checked', this.app.currentChart['public']);
@@ -28,6 +28,8 @@ define(['backbone', 'c3', 'bonCharts'], function (Backbone, c3, bonCharts) {
         trigger: true
       });
     },
+    
+
     render: function () {
       // console.log('rendered');
       clearTimeout(this.timeOut);
@@ -41,6 +43,13 @@ define(['backbone', 'c3', 'bonCharts'], function (Backbone, c3, bonCharts) {
         // this.$el.append('<div id="bonchart"></div>');
         // try {
           var c3config = bonCharts.toC3(this.collection.toJSON());
+          // console.log("REndee");
+          // console.log(this.collection.toJSON());
+          // console.log("Chart set");
+          // console.log(this.app.models.chartSettings.toJSON());
+          console.log("EQui");
+          console.log(this.app.models.chartSettings === this.collection);
+         // this.app.models.chartSettings = this.collection;
           this.chart = c3.generate(c3config);
           // $('#bonchart').width(width);
           // $('#bonchart').height(height);

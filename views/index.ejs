@@ -72,7 +72,7 @@
         <div class="container-fluid">
            
      
-      <form class="form-horizontal" id="saveChartForm" action="">
+     
         <fieldset>
           <input id="chartName" name="chartName" placeholder="Chart name" type="text" class="form-control input-md">
           <br/>
@@ -81,7 +81,7 @@
           <input id="chartPublic" name="chartPublic" type="checkbox"  class="form-control input-md"/>
           <button type="button" id="submitChart" name="singlebutton" class="btn btn-info btn-sm pull-right">Save</button>
         </fieldset>
-      </form>
+
   
         </div>
       </div>
@@ -202,8 +202,8 @@
   <script data-main="js/main.js" src="js/lib/require.js"></script>
   <script type="text/javascript">
   function ID() {
- return Math.random().toString(36).substr(2, 9);
-};
+    return Math.random().toString(36).substr(2, 9);
+  };
   function toDB() {
    // function populate() {
     var id = ID();
@@ -453,7 +453,6 @@
    data: JSON.stringify(defal),
    contentType: "application/json; charset=utf-8",
    dataType: "json",
-
  });
 
 

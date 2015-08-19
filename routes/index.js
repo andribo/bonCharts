@@ -123,23 +123,9 @@ router.get('/user', function(req, res) {
 });
 
 router.post('/save', function(req, res) {
-
-	if (req.isAuthenticated()) {
-		var user = req.user;
-		var chart = req.body;
-		console.log("chart data" + chart);
-		var elem = {
-			url: chart.url,
-			owner: user.id,
-			name: chart.name,
-			description: chart.description,
-			data: chart.data
-		}
-		db.savePublicChart(elem);
-	} else {
-		console.log("Please login");
-	}
-	res.send(req.body);
+	var data = req.body;
+	console.log("SAVE");
+    db.savePublicChart(data);
 });
 
 router.post('/populate', function(req, res) {
@@ -208,7 +194,8 @@ router.get('/charts/:id', function(req, res) {
 			"name": chartData.name,
 			"description": chartData.description,
 			"public": chartData['public'],
-			"data": chartData.data
+			"data": chartData.data,
+			"owner": chartData.owner
 		};
 		console.log(toClient);
 		res.send(JSON.stringify(toClient));

@@ -39,15 +39,14 @@ function savePublicChart(chart) {
 	MongoClient.connect(url, function(err, db) {
 		var collection = db.collection("charts");
 		collection.update({
-			url: chart.url
+			id: chart.id
 		}, {
-			name: chart.name,
-			description: chart.description,
-			data: chart.data,
-			'public': chart.public,
-			url: chart.url,
-			id: chart.url,
-			owner: chart.owner
+			"id": chart.id,
+			"name": chart.name,
+			"description": chart.description,
+			"public": chart['public'],
+		    "owner": chart.owner,
+		    "data": chart.data
 		}, {
 			'upsert': true
 		});
