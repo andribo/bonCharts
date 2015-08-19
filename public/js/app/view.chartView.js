@@ -36,6 +36,13 @@ define(['backbone', 'c3', 'bonCharts'], function (Backbone, c3, bonCharts) {
       this.timeOut = setTimeout((function () {
         // this.$el.empty();
         this.$el.html(this.template());
+
+        // this.$savebtn.prop('disabled', this.app.user.id === undefined);
+        // this.$publishbtn.prop('disabled', true);
+
+        $('#savebtn').prop('disabled', this.app.user.id === undefined);
+        $('#publishbtn').prop('disabled', true);
+
         var miscellaneousModel = this.collection.getModelByName('miscellaneous');
         // var bindto = miscellaneousModel.get('bindto');
         // var width = miscellaneousModel.get('size_width');
