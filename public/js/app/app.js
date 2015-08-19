@@ -63,6 +63,8 @@ define(['backbone', 'model', 'view', 'templatesConfig'], function (Backbone, Mod
               thatApp.$title.text('bonCharts');
               thatApp.$container.removeClass();
               thatApp.$container.addClass('main-page');
+              $('.navbar-nav').find('li').removeClass();
+              $('.navbar-nav').find('[href="#"]').parent().addClass('active');
               thatRouter.createAppView(result);
             });
         },
@@ -73,6 +75,8 @@ define(['backbone', 'model', 'view', 'templatesConfig'], function (Backbone, Mod
               thatApp.$title.text('Select Chart');
               thatApp.$container.removeClass();
               thatApp.$container.addClass('make-chart-page');
+              $('.navbar-nav').find('li').removeClass();
+              $('.navbar-nav').find('[href="#makechart"]').parent().addClass('active');
               thatRouter.createAppView(result, templatesConfig.makeChartList);
             });
         },
@@ -89,6 +93,8 @@ define(['backbone', 'model', 'view', 'templatesConfig'], function (Backbone, Mod
                 thatApp.$title.text('Editor');
                 thatApp.$container.removeClass();
                 thatApp.$container.addClass('editor-page');
+                $('.navbar-nav').find('li').removeClass();
+                $('.navbar-nav').find('[href="#editor"]').parent().addClass('active');
                 thatRouter.createAppView(result);
 
                 thatApp.views.settingsTreeView = new View.SettingsTreeView({
