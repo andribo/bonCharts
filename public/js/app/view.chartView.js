@@ -51,11 +51,12 @@ define(['backbone', 'c3', 'bonCharts'], function (Backbone, c3, bonCharts) {
         // try {
           var c3config = bonCharts.toC3(this.collection.toJSON());
           // console.log("REndee");
-          // console.log(this.collection.toJSON());
+          console.clear();
+          console.log(JSON.stringify(this.collection.toJSON()));
           // console.log("Chart set");
           // console.log(this.app.models.chartSettings.toJSON());
-          console.log("EQui");
-          console.log(this.app.models.chartSettings === this.collection);
+          // console.log("EQui");
+          // console.log(this.app.models.chartSettings === this.collection);
          // this.app.models.chartSettings = this.collection;
           this.chart = c3.generate(c3config);
           // $('#bonchart').width(width);

@@ -1,0 +1,11 @@
+#bonchart .c3-title {
+  font-size: 18px;
+  font-weight: bold;  
+}
+
+#bonchart .c3-axis-x-label,
+#bonchart .c3-axis-y-label,
+#bonchart .c3-axis-y2-label {
+  font-size: 14px;
+  font-weight: bold;  
+}
