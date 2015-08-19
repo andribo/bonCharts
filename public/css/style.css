@@ -178,6 +178,7 @@ body {
 
 #settings h3 {
   text-align: center;
+  line-height: 38px;
 }
 
 #chart-view .btn-xs {
@@ -185,18 +186,7 @@ body {
 }
 
 #bonchart {
-  /*overflow-y: auto;*/
   height: 100%;
-  /*box-sizing: border-box;*/
-  /*border: dashed 1px;*/
-  /*margin: -10px 0;*/
-  /*padding: 0;*/
-  /*padding-top: 5px;*/
-  /*overflow: hidden;*/
-    /*min-height: 200px;*/
-/*height: 100%;*/
-/*display: flex;*/
-/*overflow-y: auto;*/
 }
 
 .data-import {
@@ -227,13 +217,14 @@ body {
 .delete-col-btn {
   position: absolute;
   top: -10px;
-  left: 10px;
+  /*left: 10px;*/
+  right: 10px;
   width: 15px;
   height: 15px;
   border: solid 1px #808080;
   border-radius: 5px;
-  background-color: lime;
-  /*background-image: url(../images/circle_x_small.png) no-repeat;*/
+  background-color: #ffffff;
+  background-image: url(../images/x.gif);
   display: none;
   cursor: pointer;
 }
