@@ -142,5 +142,7 @@ var templates = {
   +    '<button class="btn btn-default" type="button" id="publishbtn">Publish</button>'
   +   '</div>'
   + '</div>'
-  + '<div id="bonchart"></div>'
+  + '<div class="settings-body">'
+  +   '<div id="bonchart"></div>'
+  + '</div>'
 };
