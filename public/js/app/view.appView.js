@@ -150,7 +150,7 @@ define(['backbone', 'model', 'bootstrap'], function (Backbone, Model) {
             "name": name,
             "description": description,
             "public": publicChart,
-            "owner": "test@ukr.net",
+            "owner": owner,
             "data": data
       };
       console.log("TO SERVER");
