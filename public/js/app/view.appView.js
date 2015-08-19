@@ -73,6 +73,7 @@ define(['backbone', 'model', 'bootstrap'], function (Backbone, Model) {
             }
           }
           that.app.user = user;
+
           // that.app.user = data;
           console.log(that.app.user);
           if(!that.app.user.id) {
@@ -80,6 +81,9 @@ define(['backbone', 'model', 'bootstrap'], function (Backbone, Model) {
             }
             else {
               $("#login").modal('hide');
+              $('#unlogined').css('display', 'none');
+              $('#logined').css('display', 'block');
+              $('#nameUser').html(that.app.user.name);
               that.app.router.navigate('', {trigger: true});
             }
         },

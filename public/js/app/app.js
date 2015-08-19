@@ -15,7 +15,14 @@ define(['backbone', 'model', 'view', 'templatesConfig'], function (Backbone, Mod
         success: function(data) {
           
           that.user = data;
-          console.log(that.user);
+          if(that.user.id) {
+            $('#unlogined').css('display', 'none');
+              $('#logined').css('display', 'block');
+              $('#nameUser').html(that.user.name);
+            } else {
+              $('#unlogined').css('display', 'block');
+              $('#logined').css('display', 'none');
+            }
           // console.log(that.app.user);
         },
         error: function(a, b, c) {
@@ -54,6 +61,8 @@ define(['backbone', 'model', 'view', 'templatesConfig'], function (Backbone, Mod
           $.ajax('js/app/temp/pagesTemplates/mainPage.html')
             .then(function (result) {
               thatApp.$title.text('bonCharts');
+              thatApp.$container.removeClass();
+              thatApp.$container.addClass('main-page');
               thatRouter.createAppView(result);
             });
         },
@@ -62,6 +71,8 @@ define(['backbone', 'model', 'view', 'templatesConfig'], function (Backbone, Mod
           $.ajax('js/app/temp/pagesTemplates/makeChartPage.html')
             .then(function (result) {
               thatApp.$title.text('Select Chart');
+              thatApp.$container.removeClass();
+              thatApp.$container.addClass('make-chart-page');
               thatRouter.createAppView(result, templatesConfig.makeChartList);
             });
         },
@@ -76,6 +87,8 @@ define(['backbone', 'model', 'view', 'templatesConfig'], function (Backbone, Mod
             $.ajax('js/app/temp/pagesTemplates/editorPage.html')
               .then(function (result) {
                 thatApp.$title.text('Editor');
+                thatApp.$container.removeClass();
+                thatApp.$container.addClass('editor-page');
                 thatRouter.createAppView(result);
 
                 thatApp.views.settingsTreeView = new View.SettingsTreeView({
@@ -107,6 +120,8 @@ define(['backbone', 'model', 'view', 'templatesConfig'], function (Backbone, Mod
           $.ajax('js/app/temp/pagesTemplates/publishPage.html')
             .then(function (result) {
               thatApp.$title.text('Publish bonCharts');
+              thatApp.$container.removeClass();
+              thatApp.$container.addClass('publish-page');
               thatRouter.createAppView(result);
             });
         },
@@ -115,6 +130,8 @@ define(['backbone', 'model', 'view', 'templatesConfig'], function (Backbone, Mod
           $.ajax('js/app/temp/pagesTemplates/aboutPage.html')
             .then(function (result) {
               thatApp.$title.text('About bonCharts');
+              thatApp.$container.removeClass();
+              thatApp.$container.addClass('about-page');
               thatRouter.createAppView(result);
             });
         }
