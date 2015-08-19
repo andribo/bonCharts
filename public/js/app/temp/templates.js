@@ -138,8 +138,8 @@ var templates = {
   chart:
     '<div class="panel-heading clearfix">'
   +   '<div class="right">'
-  +    '<button class="btn btn-default" type="button" id="savebtn"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Save</button>'
-  +    '<button class="btn btn-default" type="button" id="publishbtn"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Publish</button>'
+  +    '<button class="btn btn-default" type="button" id="savebtn" data-toggle="modal" data-target="#save">Save</button>'
+  +    '<button class="btn btn-default" type="button" id="publishbtn">Publish</button>'
   +   '</div>'
   + '</div>'
   + '<div id="bonchart"></div>'

@@ -165,7 +165,7 @@ function getChartByUrl(chartUrl, callback) {
 				var chart = result.length ? result[0] : undefined;
 				console.log("chart  :" + chart);
 				if (chart) {
-					callback(err, chart.data);
+					callback(err, chart);
 				}
 				db.close();
 			});

@@ -47,8 +47,6 @@
           <input id="password" name="password" type="password" placeholder="Enter Password" class="form-control input-md">
           <br/>
           <button type="button" id="checksubmit" name="singlebutton" class="btn btn-info btn-sm pull-right">Sign dfd</button>
-
-
       </fieldset>
       </form>
       </div>
@@ -61,6 +59,41 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+
+<div class="modal fade bs-example-modal-sm" id="save" role="dialog" aria-labelledby="gridSystemModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="gridSystemModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+           
+     
+      <form class="form-horizontal" id="saveChartForm" action="">
+        <fieldset>
+          <input id="chartName" name="chartName" placeholder="Chart name" type="text" class="form-control input-md">
+          <br/>
+          <textarea id="chartDescription" name="chartDescription" rows="5" placeholder="Chart description" class="form-control input-md"></textarea>
+          <br/>
+          <input id="chartPublic" name="chartPublic" type="checkbox"  class="form-control input-md"/>
+          <button type="button" id="submitChart" name="singlebutton" class="btn btn-info btn-sm pull-right">Save</button>
+        </fieldset>
+      </form>
+  
+        </div>
+      </div>
+     <!--  <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
 
 <div class="modal fade bs-example-modal-sm" id="register" role="dialog" aria-labelledby="gridSystemModalLabel">
   <div class="modal-dialog modal-sm" role="document">

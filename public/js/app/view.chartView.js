@@ -11,10 +11,18 @@ define(['backbone', 'c3'], function (Backbone, c3) {
       this.listenTo(this.collection, 'change add remove', this.render);
     },
     events: {
-      'click #publishbtn': 'publishChart'
+      'click #publishbtn': 'publishChart',
+      'click #savebtn': 'saveChart'
     },
     chart: null,
     timeOut: undefined,
+    saveChart: function() {
+      console.log()
+      $('#chartName').val(this.app.currentChart.name);
+      $('#chartDescription').val(this.app.currentChart.description);
+      $('#chartPublic').prop('checked', this.app.currentChart['public']);
+      console.log(this.app.currentChart);
+    },
     publishChart: function (e) {
       this.app.router.navigate('publish', {
         trigger: true

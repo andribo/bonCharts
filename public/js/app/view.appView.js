@@ -127,7 +127,11 @@ define(['backbone', 'model', 'bootstrap'], function (Backbone, Model) {
         url: '/charts/'+ e.currentTarget.id,
         success: function (result) {
           console.log(result);
-          self.app.models.chartSettings = new Model.ChartSettingsCollection(JSON.parse(result));
+          var chartData = JSON.parse(result);
+          self.app.currentChart.name = chartData.name;
+          self.app.currentChart.description = chartData.description;
+          self.app.currentChart['public'] = chartData['public'];
+          self.app.models.chartSettings = new Model.ChartSettingsCollection(chartData.data);
           self.app.router.navigate('editor', {
             trigger: true
           });

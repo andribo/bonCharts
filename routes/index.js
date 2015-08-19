@@ -204,7 +204,14 @@ router.delete('/charts/:id', function(req, res) {
 });
 router.get('/charts/:id', function(req, res) {
 	db.getChartByUrl(req.params.id, function(err, chartData) {
-		res.send(JSON.stringify(chartData));
+		var toClient = {
+			"name": chartData.name,
+			"description": chartData.description,
+			"public": chartData['public'],
+			"data": chartData.data
+		};
+		console.log(toClient);
+		res.send(JSON.stringify(toClient));
 	});
 });
 

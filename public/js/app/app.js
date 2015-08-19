@@ -5,6 +5,7 @@ define(['backbone', 'model', 'view', 'templatesConfig'], function (Backbone, Mod
       this.models = {};
       this.views = {};
       this.user = {};
+      this.currentChart = {};
       this.$container = $('#page');
       this.$title = $('title');
       var that = this;
