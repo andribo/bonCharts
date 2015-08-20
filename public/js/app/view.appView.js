@@ -57,7 +57,9 @@ define(['backbone', 'model', 'bootstrap'], function (Backbone, Model) {
       'click #checksubmit': 'logination',
       'click #publishbtn': 'publish',
       'click #redirectbtn': 'redirectToView',
-      'mousedown #submitChart': 'submitChart'
+      'mousedown #submitChart': 'submitChart',
+      'click #postFB': 'postFacebook',
+      'click #postTW': 'postTwitter'
     },
     logination: function (e) {
       // e.stopPropagation();
@@ -127,6 +129,14 @@ define(['backbone', 'model', 'bootstrap'], function (Backbone, Model) {
         chartList: this.templateConfig
       }));
       return this;
+    },
+    postFacebook: function () {
+      var url = 'http://' + window.location.host + '/' + this.app.currentChart.id;
+      window.open('https://www.facebook.com/sharer/sharer.php?url=' + url);
+    },
+    postTwitter: function () {
+      var url = 'http://' + window.location.host + '/' + this.app.currentChart.id;
+      window.open('https://twitter.com/intent/tweet?url=' + url);
     },
     redirectToView: function() {
       window.open($('#chartURL').val());

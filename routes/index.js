@@ -217,6 +217,7 @@ router.get('/:id', function(req, res) {
 		res.render('view', {
 			chartData: JSON.stringify(result.data),
 			chartName: result.name,
+			chartDescription: result.description,
 			isPublic: result['public']
 		});
 	});
