@@ -19,9 +19,10 @@ define(['backbone', 'd3', 'xlsx'], function (Backbone, d3, XLSX) {
       var table = document.getElementById('data-table');
       for(var i = 0; i < table.rows.length; i += 1) {
         data.push([]);
-        for(var j = 0; j < table.rows[i].cells.length; j += 1) {
-          data[i][j] = table.rows[i].cells[j].innerHTML;
+        for(var j = 1; j < table.rows[i].cells.length; j += 1) {
+          data[i][j - 1] = table.rows[i].cells[j].innerText;
         }
+        console.log(data[i]);
       }
       var model = this.collection.getModelByName('data');
       
