@@ -13,11 +13,53 @@ define([], function ()
         text: 'Bar',
         items: [
           {
-            name: 'Simple bar',
+            name: 'indexed',
             description: '',
-            id: 'barChart',
+            id: 'indexedbar',
             imageSrc: '/images/transport-q-c-120-120-5.jpg'
-          }
+          },
+          {
+            name: 'category',
+            description: '',
+            id: 'categorybar',
+            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+          },
+          {
+            name: 'timeseries',
+            description: '',
+            id: 'timeseriesbar',
+            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+          },
+          {
+            name: 'timeseries, yearly',
+            description: '',
+            id: 'timeseriesyearlybar',
+            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+          },
+          {
+            name: 'secondary Y axis',
+            description: '',
+            id: 'y2bar',
+            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+          },
+          {
+            name: 'category with subchart',
+            description: 'category columns with scroll',
+            id: 'subchartbar',
+            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+          },
+          {
+            name: 'bar and line',
+            description: '',
+            id: 'barline',
+            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+          },
+          {
+            name: 'rotated column and line',
+            description: '',
+            id: 'rotatedcolumnline',
+            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+          },
         ]
       },
       {
@@ -25,63 +67,39 @@ define([], function ()
         text: 'Line',
         items: [
           {
-            name: 'Line char',
+            name: 'line',
             description: '',
-            id: 'dr0kiy5zq',
+            id: 'line',
             imageSrc: '/images/transport-q-c-120-120-5.jpg'
           },
           {
-            name: 'Random',
+            name: 'rotated line',
             description: '',
-            id: 'randomChart',
+            id: 'rotatedline',
             imageSrc: '/images/transport-q-c-120-120-5.jpg'
           },
           {
-            name: 'Line char',
+            name: 'diferent X line',
             description: '',
-            id: 'lineChart',
+            id: 'diferentxline',
             imageSrc: '/images/transport-q-c-120-120-5.jpg'
           },
           {
-            name: 'Random',
+            name: 'smoothed line',
             description: '',
-            id: 'randomChart',
+            id: 'smoothedline',
             imageSrc: '/images/transport-q-c-120-120-5.jpg'
           },
           {
-            name: 'Line char',
+            name: 'step line',
             description: '',
-            id: 'lineChart',
+            id: 'stepline',
             imageSrc: '/images/transport-q-c-120-120-5.jpg'
           },
           {
-            name: 'Random',
+            name: 'date series, yearly',
             description: '',
-            id: 'randomChart',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
-          },
-          {
-            name: 'Line char',
-            description: '',
-            id: 'lineChart',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
-          },
-          {
-            name: 'Random',
-            description: '',
-            id: 'randomChart',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
-          },
-          {
-            name: 'Line char',
-            description: '',
-            id: 'lineChart',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
-          },
-          {
-            name: 'Random',
-            description: '',
-            id: 'randomChart',
+            id: 'dateseriesyearlyline',
             imageSrc: '/images/transport-q-c-120-120-5.jpg'
           }
         ]
@@ -89,32 +107,74 @@ define([], function ()
       {
         name: 'area',
         text: 'Area',
-        items: []
-      },
-      {
-        name: 'pie-donut',
-        text: 'Pie & Donut',
-        items: [{
-            name: 'Random',
+        items: [
+          {
+            name: 'area',
             description: '',
-            id: '7txujpxgt',
+            id: 'area',
             imageSrc: '/images/transport-q-c-120-120-5.jpg'
-          }]
+          },
+          {
+            name: 'rotated area',
+            description: '',
+            id: 'rotatedarea',
+            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+          },
+          {
+            name: 'smoothed area',
+            description: '',
+            id: 'smoothedarea',
+            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+          },
+          {
+            name: 'step area',
+            description: '',
+            id: 'steparea',
+            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+          },
+          {
+            name: 'date series, yearly',
+            description: '',
+            id: 'dateseriesyearlyarea',
+            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+          }
+        ]
       },
       {
-        name: 'scatter',
-        text: 'Scatter',
-        items: []
+        name: 'piedonut',
+        text: 'Pie & Donut',
+        items: [
+          {
+            name: 'donut',
+            description: '',
+            id: 'donutpiedonut',
+            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+          },
+          {
+            name: 'pie',
+            description: '',
+            id: 'piepiedonut',
+            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+          }
+        ]
       },
       {
         name: 'other',
         text: 'Other',
-        items: [{
-            name: 'Random',
+        items: [
+          {
+            name: 'scatter',
             description: '',
-            id: '2mend6vf1',
+            id: 'scatter',
             imageSrc: '/images/transport-q-c-120-120-5.jpg'
-          }]
+          },
+          {
+            name: 'mixed',
+            description: '',
+            id: 'mixedother',
+            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+          }
+        ]
       }
     ],
     settingsTree: [
