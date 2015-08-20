@@ -16,49 +16,49 @@ define([], function ()
             name: 'indexed',
             description: '',
             id: 'indexedbar',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: '/images/bar.png'
           },
           {
             name: 'category',
             description: '',
             id: 'categorybar',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: '/images/bar.png'
           },
           {
             name: 'timeseries',
             description: '',
             id: 'timeseriesbar',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: '/images/bar.png'
           },
           {
             name: 'timeseries, yearly',
             description: '',
             id: 'timeseriesyearlybar',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: '/images/bar.png'
           },
           {
             name: 'secondary Y axis',
             description: '',
             id: 'y2bar',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: '/images/bar.png'
           },
           {
             name: 'category with subchart',
             description: 'category columns with scroll',
             id: 'subchartbar',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: '/images/bar.png'
           },
           {
             name: 'bar and line',
             description: '',
             id: 'barline',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: '/images/bar.png'
           },
           {
             name: 'rotated column and line',
             description: '',
             id: 'rotatedcolumnline',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: '/images/bar.png'
           },
         ]
       },
@@ -70,37 +70,37 @@ define([], function ()
             name: 'line',
             description: '',
             id: 'line',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: '/images/newarea.png'
           },
           {
             name: 'rotated line',
             description: '',
             id: 'rotatedline',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: '/images/newarea.png'
           },
           {
             name: 'diferent X line',
             description: '',
             id: 'diferentxline',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: '/images/newarea.png'
           },
           {
             name: 'smoothed line',
             description: '',
             id: 'smoothedline',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: '/images/newarea.png'
           },
           {
             name: 'step line',
             description: '',
             id: 'stepline',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: '/images/newarea.png'
           },
           {
             name: 'date series, yearly',
             description: '',
             id: 'dateseriesyearlyline',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: '/images/newarea.png'
           }
         ]
       },
@@ -112,31 +112,31 @@ define([], function ()
             name: 'area',
             description: '',
             id: 'area',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: '/images/newline.png'
           },
           {
             name: 'rotated area',
             description: '',
             id: 'rotatedarea',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: '/images/newline.png'
           },
           {
             name: 'smoothed area',
             description: '',
             id: 'smoothedarea',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: '/images/newline.png'
           },
           {
             name: 'step area',
             description: '',
             id: 'steparea',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: '/images/newline.png'
           },
           {
             name: 'date series, yearly',
             description: '',
             id: 'dateseriesyearlyarea',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: '/images/newline.png'
           }
         ]
       },
@@ -148,13 +148,13 @@ define([], function ()
             name: 'donut',
             description: '',
             id: 'donutpiedonut',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: '/images/donut.png'
           },
           {
             name: 'pie',
             description: '',
             id: 'piepiedonut',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: '/images/pie.png'
           }
         ]
       },
@@ -166,13 +166,13 @@ define([], function ()
             name: 'scatter',
             description: '',
             id: 'scatter',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: '/images/other.png'
           },
           {
             name: 'mixed',
             description: '',
             id: 'mixedother',
-            imageSrc: '/images/transport-q-c-120-120-5.jpg'
+            imageSrc: '/images/other.png'
           }
         ]
       }

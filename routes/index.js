@@ -124,7 +124,7 @@ router.get('/data/:id', function(req, res) {
 				'id': result[i].id,
 				'name': result[i].name,
 				'description': result[i].description,
-				'imageSrc': 'http://a.deviantart.net/avatars/e/i/eigthdeadlysin.jpg?5'
+				'imageSrc': '/images/userchartsimg.png'
 			});
 		}
 		res.send(neededData);
