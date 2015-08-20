@@ -40,6 +40,7 @@ define(['backbone', 'model', 'view', 'templatesConfig'], function (Backbone, Mod
       this.router = new(Backbone.Router.extend({
         routes: {
           '': 'startPage',
+          '_=_': 'fromFacebook',
           'makechart': 'makeChartPage',
           'editor': 'editorPage',
           'about': 'about',
@@ -54,6 +55,11 @@ define(['backbone', 'model', 'view', 'templatesConfig'], function (Backbone, Mod
             template: template,
             templateConfig: templateConfig,
             app: thatApp
+          });
+        },
+        fromFacebook: function () {
+          this.navigate('', {
+            trigger: true
           });
         },
         startPage: function () {
