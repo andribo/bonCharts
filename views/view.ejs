@@ -4,12 +4,9 @@
 
   <meta charset="utf-8" /> 
   <meta property="og:title" content="<%= chartName %>"/>
-  <!-- <meta property="og:type" content="movie"/>
-   --><meta property="og:url" content="http://localhost/"/>
-  <!-- <meta property="og:image" content="http://ia.media-imdb.com/rock.jpg"/>
-   --><meta property="og:site_name" content="bonCharts"/>
-  <!-- <meta property="fb:admins" content="USER_ID"/>
-   --><meta property="og:description"
+  <meta property="og:url" content="http://localhost/"/>
+  <meta property="og:site_name" content="bonCharts"/>
+  <meta property="og:description"
         content="<%= chartDescription %>"/>
   <link rel="stylesheet" href="css/c3.css">
   <link rel="stylesheet" href="css/c3OwnStyle.css">
@@ -33,14 +30,11 @@
   <script src="js/lib/c3.min.js"></script>
   <script src="js/app/bonCharts.js"></script>
   <script type="text/javascript">
-  <% if(isPublic) {%>
+  <% if(isPublic) { %>
   var data = JSON.parse('<%-chartData %>'),
     chart = c3.generate(bonCharts.toC3(data));
-
-  chart.resize({
-    height: $(chart.element).parent().height() - 10
-  });
-  <%} %>
+    chart.resize({height: $(chart.element).parent().height() - 10});
+  <% } %>
 </script>
 </body>
 </html>

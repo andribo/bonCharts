@@ -47,9 +47,7 @@ define(['backbone'], function (Backbone) {
     },
     updateSeriesDataXYControls: function () {
       var data_rows = this.dataModel.get('data_rows');
-//      console.log(data_rows);
       var prevData_rows = this.dataModel.previous('data_rows');
-//      if (prevData_rows && prevData_rows[0].length !== data_rows[0].length) {
         var $dataX = $('#data_x');
         var $dataY = $('#data_y');
         var dataXValue = this.model.get('data_x');
@@ -66,7 +64,6 @@ define(['backbone'], function (Backbone) {
         });
         $dataX.find('option[value="' + dataXValue + '"]').prop('selected', 'selected');
         $dataY.find('option[value="' + dataYValue + '"]').prop('selected', 'selected');
-//      }
     }
   });
 });

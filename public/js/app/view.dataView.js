@@ -49,7 +49,6 @@ define(['backbone', 'd3', 'xlsx'], function (Backbone, d3, XLSX) {
             workbook = XLSX.read(data, {type: 'binary'});
             rows = d3.csv.parseRows(XLSX.utils.sheet_to_csv(workbook.Sheets[workbook.SheetNames[0]]));
           } catch (error) {
-            console.log(error);
           }
         }
         model.set('data_rows', rows);
@@ -62,7 +61,6 @@ define(['backbone', 'd3', 'xlsx'], function (Backbone, d3, XLSX) {
           reader.readAsBinaryString(file);
         }
       } else {
-        console.log('Error: File is too big');
       }
     },
     deleteColumn: function (e) {
@@ -81,8 +79,6 @@ define(['backbone', 'd3', 'xlsx'], function (Backbone, d3, XLSX) {
       });
       model.set('data_rows', dataRows);
       this.render();
-
-      console.log(columnIndex);
     },
     deleteRow: function (e) {
       var rowIndex = $(e.target).parent().parent().index();
@@ -100,7 +96,6 @@ define(['backbone', 'd3', 'xlsx'], function (Backbone, d3, XLSX) {
       });
       dataRows[0][dataRows[0].length - 1] = 'column' + dataRows[0].length;
       model.set('data_rows', dataRows);
-      console.log(dataRows);
       this.render();
     },
     addRow: function (e) {
@@ -108,7 +103,6 @@ define(['backbone', 'd3', 'xlsx'], function (Backbone, d3, XLSX) {
       var dataRows = model.get('data_rows').slice(0);
       dataRows.push(dataRows[0].map(function () { return null; }));
       model.set('data_rows', dataRows);
-      console.log(dataRows);
       this.render();
     },
     render: function (e) {

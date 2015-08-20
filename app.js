@@ -21,21 +21,22 @@ var app = express();
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
-// app.use("/public", express.static(path.join(__dirname, 'public')));
-app.use(bodyParser.json()); // for parsing application/json
+
+app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({
   extended: true
-})); // for parsing application/x-www-form-urlencoded
+})); 
+
 app.use(cookieParser());
 app.use(expressSession({
   secret: process.env.SESSION_SECRET || "secret",
   resave: false,
   saveUninitialized: false
 }));
-/* init passport middleware*/
+
 app.use(passport.initialize());
 app.use(passport.session());
-/* Login check */
+
 passport.use(new passportLocal.Strategy(function(username, passport, done) {
   db.checkСorrectness(username, function(err, user) {
     if (user) {
@@ -59,13 +60,7 @@ passport.use(new FacebookStrategy({
     callbackURL: "/facebook/callback"
   },
   function(accessToken, refreshToken, profile, done) {
-    // asynchronous verification, for effect...
     process.nextTick(function() {
-      // To keep the example simple, the user's Facebook profile is returned to
-      // represent the logged-in user.  In a typical application, you would want
-      // to associate the Facebook account with a user record in your database,
-      // and return that user instead.
-      console.log("ACCS:"+accessToken);
       var user = {
         accessTokens: accessToken,
         id: profile.id,
@@ -84,11 +79,6 @@ passport.use(new TwitterStrategy({
     callbackURL: "/twitter/callback"
   },
   function(token, tokenSecret, profile, cb) {
-    // In this example, the user's Twitter profile is supplied as the user
-    // record.  In a production-quality application, the Twitter profile should
-    // be associated with a user record in the application's database, which
-    // allows for account linking and authentication with other identity
-    // providers.
     var user = {
       id: profile.id,
       name: profile.displayName,

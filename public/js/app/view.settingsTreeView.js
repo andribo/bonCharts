@@ -12,7 +12,6 @@ define(['backbone', 'settingsView'], function (Backbone, SettingsView) {
       this.listenTo(this.collection, 'add remove', this.render);
       this.settingsView = null;
       this.$settings = $('#settings');
-      // $('#general').collapse('toggle');
       this.changeSettingsView({ target: { id: 'miscellaneous'}});
     },
     events: {
@@ -21,9 +20,6 @@ define(['backbone', 'settingsView'], function (Backbone, SettingsView) {
       'click .delete-series-btn': 'deleteSeries'
     },
     changeSettingsView: function (e) {
-      // if (e.stopPropagation) {
-      //   e.stopPropagation();
-      // }
       if (e.preventDefault) {
         e.preventDefault();
       }
@@ -54,11 +50,9 @@ define(['backbone', 'settingsView'], function (Backbone, SettingsView) {
       }
     },
     addSeries: function (e) {
-    	// e.preventDefault();
     	this.collection.add(this.collection.defaultSeries());
     },
     deleteSeries: function (e) {
-    	// e.preventDefault();
     	var seriesName = e.target.id.substring(13);
     	this.collection.remove(this.collection.getModelByName(seriesName));
     	if (this.settingsView.name === seriesName) {
@@ -66,7 +60,6 @@ define(['backbone', 'settingsView'], function (Backbone, SettingsView) {
     	}
     },
     changeChartType: function () {
-      // console.log(model);
       var type = this.collection.getModelByName('miscellaneous').get('chart_data_type');
       var isPieDonut = 'pie donut'.indexOf(type) !== -1;
   
@@ -75,7 +68,6 @@ define(['backbone', 'settingsView'], function (Backbone, SettingsView) {
       this.templatesConfig.getPropertyByName('line_bar', this.templatesConfig.settingsTree).hidden = isPieDonut;
 
       this.templatesConfig.getPropertyByName('grid', this.templatesConfig.getPropertyByName('chart_area', this.templatesConfig.settingsTree).items).hidden = isPieDonut;
-      // this.templatesConfig.getPropertyByName('regions', this.templatesConfig.getPropertyByName('chart_area', this.templatesConfig.settingsTree).items).hidden = isPieDonut;
       
       this.templatesConfig.getPropertyByName('axis_rotated', this.templatesConfig.miscellaneous).hidden = isPieDonut;
       this.templatesConfig.getPropertyByName('zoom_enabled', this.templatesConfig.miscellaneous).hidden = isPieDonut;
@@ -83,10 +75,8 @@ define(['backbone', 'settingsView'], function (Backbone, SettingsView) {
       this.templatesConfig.getPropertyByName('tooltip_grouped', this.templatesConfig.tooltip).hidden = isPieDonut;
 
       this.templatesConfig.getPropertyByName('data_x', this.templatesConfig.series).hidden = isPieDonut;
-      // this.templatesConfig.getPropertyByName('data_xFormat', this.templatesConfig.data_settings).hidden = isPieDonut;
       this.templatesConfig.getPropertyByName('data_y2', this.templatesConfig.series).hidden = isPieDonut;
       this.templatesConfig.getPropertyByName('data_type', this.templatesConfig.series).hidden = isPieDonut;
-      // this.templatesConfig.getPropertyByName('data_regions', this.templatesConfig.series).hidden = isPieDonut;
       
       if (this.settingsView) {
         this.settingsView.render();

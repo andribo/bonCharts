@@ -15,14 +15,9 @@ requirejs.config({
     underscore: '../lib/underscore',
     backbone: '../lib/backbone',
     d3: '../lib/d3',
-    // c3: '../lib/c3-0.4.10.min',
-    // c3: '../lib/c3-0.4.11-rc1.min',
     c3: '../lib/c3-0.4.11-rc3.min',
-    // c3: '../lib/c3-0.4.11-rc3',
     xlsx: '../lib/xlsx.min',
     bootstrap: '../lib/bootstrap.min',
-    // jszip: '../lib/jszip',
-    
     bonCharts: './bonCharts',
     app: './app',
     model: './model',
@@ -32,7 +27,6 @@ requirejs.config({
     settingsView: './view.settingsView',
     chartView: './view.chartView',
     dataView: './view.dataView',
-    // templatesConfig: './templatesConfig'
   }
 });
 
