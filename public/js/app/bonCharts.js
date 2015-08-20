@@ -9,72 +9,152 @@ var bonCharts = {
   },
   toC3: function (models) {
     var c3config = {
-      bindto: '#bonchart'
+      bindto: '#bonchart',
+      title: {
+        padding: {}
+      },
+      size: {},
+      padding: {},
+      interaction: {},
+      transition: {},
+      data: {
+        rows: {},
+        xs: {},
+        names: {},
+        classes: {},
+        groups: [],
+        axes: {},
+        types: {},
+        labels: {
+          format: {}
+        },
+        regions: {},
+        colors: {},
+        hide: [],
+        empty: {
+          label: {}
+        },
+        selection: {},
+      },
+      axis: {
+        x: {
+          tick: {},
+          padding: {},
+          label: {}
+        },
+        y: {
+          tick: {},
+          padding: {},
+          label: {}
+        },
+        y2: {
+          tick: {},
+          padding: {},
+          label: {}
+        }
+      },
+      grid: {
+        x: {
+          lines: []
+        },
+        y: {
+          lines: []
+        }
+      },
+      regions: [],
+      legend: {
+        hide: [],
+        inset: {}
+      },
+      tooltip: {
+        format: {}
+      },
+      subchart: {
+        size: {}
+      },
+      zoom: {},
+      point: {
+        focus: {
+          expand: {}
+        },
+        select: {}
+      },
+      line: {
+        step: {}
+      },
+      area: {},
+      bar: {},
+      pie: {
+        label: {}
+      },
+      donut: {
+        label: {}
+      }
     };
 
-    c3config.bindto = '#bonchart';
-    c3config.title = {};
-    c3config.title.padding = {};
-    c3config.size = {};
-    c3config.padding = {};
-    c3config.interaction = {};
-    c3config.transition = {};
-    c3config.data = {};
-    c3config.data.rows = {};
-    c3config.data.xs = {};
-    c3config.data.names = {};
-    c3config.data.classes = {};
-    c3config.data.groups = [];
-    c3config.data.axes = {};
-    c3config.data.types = {};
-    c3config.data.labels = {};
-    c3config.data.labels.format = {};
-    c3config.data.regions = {};
-    c3config.data.colors = {};
-    c3config.data.hide = [];
-    c3config.data.empty = {};
-    c3config.data.empty.label = {};
-    c3config.data.selection = {};
-    c3config.axis = {};
-    c3config.axis.x = {};
-    c3config.axis.x.tick = {};
-    c3config.axis.x.padding = {};
-    c3config.axis.x.label = {};
-    c3config.axis.y = {};
-    c3config.axis.y.label = {};
-    c3config.axis.y.tick = {};
-    c3config.axis.y.padding = {};
-    c3config.axis.y2 = {};
-    c3config.axis.y2.label = {};
-    c3config.axis.y2.tick = {};
-    c3config.axis.y2.padding = {};
-    c3config.grid = {};
-    c3config.grid.x = {};
-    c3config.grid.x.lines = [];
-    c3config.grid.y = {};
-    c3config.grid.y.lines = [];
-    c3config.regions = [];
-    c3config.legend = {};
-    c3config.legend.hide = [];
-    c3config.legend.inset = {};
-    c3config.tooltip = {};
-    c3config.tooltip.format = {};
-    c3config.subchart = {};
-    c3config.subchart.size = {};
-    c3config.zoom = {};
-    c3config.point = {};
-    c3config.point.focus = {};
-    c3config.point.focus.expand = {};
-    c3config.point.select = {};
-    c3config.line = {};
-    c3config.line.step = {};
-    c3config.area = {};
-    c3config.bar = {};
-    // c3config.bar.width = {};
-    c3config.pie = {};
-    c3config.pie.label = {};
-    c3config.donut = {};
-    c3config.donut.label = {};
+    // c3config.bindto = '#bonchart';
+    // c3config.title = {};
+    // c3config.title.padding = {};
+    // c3config.size = {};
+    // c3config.padding = {};
+    // c3config.interaction = {};
+    // c3config.transition = {};
+    // c3config.data = {};
+    // c3config.data.rows = {};
+    // c3config.data.xs = {};
+    // c3config.data.names = {};
+    // c3config.data.classes = {};
+    // c3config.data.groups = [];
+    // c3config.data.axes = {};
+    // c3config.data.types = {};
+    // c3config.data.labels = {};
+    // c3config.data.labels.format = {};
+    // c3config.data.regions = {};
+    // c3config.data.colors = {};
+    // c3config.data.hide = [];
+    // c3config.data.empty = {};
+    // c3config.data.empty.label = {};
+    // c3config.data.selection = {};
+    // c3config.axis = {};
+    // c3config.axis.x = {};
+    // c3config.axis.x.tick = {};
+    // c3config.axis.x.padding = {};
+    // c3config.axis.x.label = {};
+    // c3config.axis.y = {};
+    // c3config.axis.y.label = {};
+    // c3config.axis.y.tick = {};
+    // c3config.axis.y.padding = {};
+    // c3config.axis.y2 = {};
+    // c3config.axis.y2.label = {};
+    // c3config.axis.y2.tick = {};
+    // c3config.axis.y2.padding = {};
+    // c3config.grid = {};
+    // c3config.grid.x = {};
+    // c3config.grid.x.lines = [];
+    // c3config.grid.y = {};
+    // c3config.grid.y.lines = [];
+    // c3config.regions = [];
+    // c3config.legend = {};
+    // c3config.legend.hide = [];
+    // c3config.legend.inset = {};
+    // c3config.tooltip = {};
+    // c3config.tooltip.format = {};
+    // c3config.subchart = {};
+    // c3config.subchart.size = {};
+    // c3config.zoom = {};
+    // c3config.point = {};
+    // c3config.point.focus = {};
+    // c3config.point.focus.expand = {};
+    // c3config.point.select = {};
+    // c3config.line = {};
+    // c3config.line.step = {};
+    // c3config.area = {};
+    // c3config.bar = {};
+    // // c3config.bar.width = {};
+    // c3config.pie = {};
+    // c3config.pie.label = {};
+    // c3config.donut = {};
+    // c3config.donut.label = {};
 
     models.forEach(function (model) {
       

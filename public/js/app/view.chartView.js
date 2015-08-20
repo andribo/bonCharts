@@ -48,11 +48,11 @@ define(['backbone', 'c3', 'bonCharts'], function (Backbone, c3, bonCharts) {
         // var width = miscellaneousModel.get('size_width');
         // var height = miscellaneousModel.get('size_height');
         // this.$el.append('<div id="bonchart"></div>');
-        // try {
+        try {
           var c3config = bonCharts.toC3(this.collection.toJSON());
           // console.log("REndee");
-          console.clear();
-          console.log(JSON.stringify(this.collection.toJSON()));
+          // console.clear();
+          // console.log(JSON.stringify(this.collection.toJSON()));
           // console.log("Chart set");
           // console.log(this.app.models.chartSettings.toJSON());
           // console.log("EQui");
@@ -68,10 +68,10 @@ define(['backbone', 'c3', 'bonCharts'], function (Backbone, c3, bonCharts) {
              height: $chartContainerElement.parent().height() - 10
             });
           // }
-        // } catch (error) {
-        //   console.log(error);
-        // }
-      }).bind(this), 500);
+        } catch (error) {
+          console.log(error);
+        }
+      }).bind(this), 300);
       // return this;
     }
   });
