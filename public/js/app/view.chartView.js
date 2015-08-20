@@ -71,7 +71,7 @@ define(['backbone', 'c3', 'bonCharts'], function (Backbone, c3, bonCharts) {
         } catch (error) {
           console.log(error);
         }
-      }).bind(this), 300);
+      }).bind(this), 500);
       // return this;
     }
   });

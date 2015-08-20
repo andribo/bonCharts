@@ -92,70 +92,7 @@ var bonCharts = {
       }
     };
 
-    // c3config.bindto = '#bonchart';
-    // c3config.title = {};
-    // c3config.title.padding = {};
-    // c3config.size = {};
-    // c3config.padding = {};
-    // c3config.interaction = {};
-    // c3config.transition = {};
-    // c3config.data = {};
-    // c3config.data.rows = {};
-    // c3config.data.xs = {};
-    // c3config.data.names = {};
-    // c3config.data.classes = {};
-    // c3config.data.groups = [];
-    // c3config.data.axes = {};
-    // c3config.data.types = {};
-    // c3config.data.labels = {};
-    // c3config.data.labels.format = {};
-    // c3config.data.regions = {};
-    // c3config.data.colors = {};
-    // c3config.data.hide = [];
-    // c3config.data.empty = {};
-    // c3config.data.empty.label = {};
-    // c3config.data.selection = {};
-    // c3config.axis = {};
-    // c3config.axis.x = {};
-    // c3config.axis.x.tick = {};
-    // c3config.axis.x.padding = {};
-    // c3config.axis.x.label = {};
-    // c3config.axis.y = {};
-    // c3config.axis.y.label = {};
-    // c3config.axis.y.tick = {};
-    // c3config.axis.y.padding = {};
-    // c3config.axis.y2 = {};
-    // c3config.axis.y2.label = {};
-    // c3config.axis.y2.tick = {};
-    // c3config.axis.y2.padding = {};
-    // c3config.grid = {};
-    // c3config.grid.x = {};
-    // c3config.grid.x.lines = [];
-    // c3config.grid.y = {};
-    // c3config.grid.y.lines = [];
-    // c3config.regions = [];
-    // c3config.legend = {};
-    // c3config.legend.hide = [];
-    // c3config.legend.inset = {};
-    // c3config.tooltip = {};
-    // c3config.tooltip.format = {};
-    // c3config.subchart = {};
-    // c3config.subchart.size = {};
-    // c3config.zoom = {};
-    // c3config.point = {};
-    // c3config.point.focus = {};
-    // c3config.point.focus.expand = {};
-    // c3config.point.select = {};
-    // c3config.line = {};
-    // c3config.line.step = {};
-    // c3config.area = {};
-    // c3config.bar = {};
-    // // c3config.bar.width = {};
-    // c3config.pie = {};
-    // c3config.pie.label = {};
-    // c3config.donut = {};
-    // c3config.donut.label = {};
-
+    var that = this;
     models.forEach(function (model) {
       
 
@@ -164,32 +101,6 @@ var bonCharts = {
       }
 
       for (var prop in model) {
-        // var path = propMap[prop];
-        // var value = model[prop];
-
-        // switch() {
-        //   case: '':
-        //    value = (function (format, valueFormat, ratioFormat) {
-        //       return function (value, ratio, id, index) {
-        //         ratio = ratio === undefined ? '' : ratio;
-
-        //         if (!format) {
-        //           return '';
-        //         }
-                
-        //           return format
-        //             .replace(/\[\[value\]\]/g, d3.format(valueFormat)(value))
-        //             .replace(/\[\[ratio\]\]/g, d3.format(ratioFormat)(ratio))
-        //             .replace(/\[\[id\]\]/g, id)
-        //             .replace(/\[\[index\]\]/g, index);
-        //       };
-        //     })(model[prop], model['tooltip_format_value_format'], model['tooltip_format_ratio_format']);
-        //     break;
-        // }
-
-        // _.set(c3config, path, model[prop]);
-
-
         switch (prop) {
         // miscellaneous ------------------------------------
           case 'chart_data_type':
@@ -611,19 +522,7 @@ var bonCharts = {
             if (model.data_y) {
               c3config.data.labels = c3config.data.labels || {};
               c3config.data.labels.format = c3config.data.labels.format || {};
-              c3config.data.labels.format[model.data_y] = (function (labels_show, format, valueFormat) {
-                return function (value, id, index, j) {
-                  if (labels_show) {
-                    if (format) {
-                      return format
-                        .replace(/\[\[value\]\]/g, d3.format(valueFormat)(value))
-                        .replace(/\[\[index\]\]/g, index);
-                    } else {
-                      return '';
-                    }
-                  }
-                };
-              })(model['data_labels_show'], model[prop], model['data_labels_format_value']);
+              c3config.data.labels.format[model.data_y] = that.data_labels_format_func(model['data_labels_show'], model[prop], model['data_labels_format_value']);
             }
             break;
           case 'data_order':
@@ -651,30 +550,8 @@ var bonCharts = {
       }
     });
 
-    c3config.tooltip.format.title = (function (format, isTimeseries, xAxisTickValueFormat) {
-      // c3 has a bug if axis x type is 'category'
-      return (function (x) {
-        x = x === undefined ? '' : x;
-        // if (x && this.axis.x.type == 'category') {
-        //   x = 'category ' + x;
-        // }
-        if (isTimeseries && xAxisTickValueFormat) {
-          x = d3.time.format(xAxisTickValueFormat)(new Date(x));
-        }
-        // console.log(x);
-        return format ? format.replace(/\[\[x\]\]/g, x) : '';
-      });//.bind(c3config);
-    })(this.getPropertyByName('tooltip_format_title', models), c3config.axis.x.type == 'timeseries', this.getPropertyByName('axis_x_tick_value_format', models)); //c3config.axis.x.type == 'timeseries'
-
-    c3config.onresize = function () {
-      // console.log(this);
-      // if (!c3config.size.height) {
-        var $chartContainerElement = $('#bonchart');
-        this.api.resize({
-          height: $chartContainerElement.parent().height() - 10
-        });
-      // }
-    };
+    c3config.tooltip.format.title = this.tooltip_format_title_func(this.getPropertyByName('tooltip_format_title', models), c3config.axis.x.type == 'timeseries', this.getPropertyByName('axis_x_tick_value_format', models));
+    c3config.onresize = this.resize;
 
     if (c3config.data.xs) {
       var value, sameX = true;
@@ -697,6 +574,39 @@ var bonCharts = {
     // window.c3config = c3config;
     // console.log(JSON.stringify(c3config));
     return c3config;
-  }
-
+  },
+  resize: function () {
+    var $parent = $('#bonchart').parent();
+    this.api.resize({
+      width: $parent.width(),
+      height: $parent.height() - 10
+    });
+  },
+  data_labels_format_func: function (labels_show, format, valueFormat) {
+    return function (value, id, index, j) {
+      if (labels_show) {
+        if (format) {
+          return format
+            .replace(/\[\[value\]\]/g, d3.format(valueFormat)(value))
+            .replace(/\[\[index\]\]/g, index);
+        } else {
+          return '';
+        }
+      }
+    };
+  },
+  tooltip_format_title_func: function (format, isTimeseries, xAxisTickValueFormat) {
+    // c3 has a bug if axis x type is 'category'
+    return (function (x) {
+      x = x === undefined ? '' : x;
+      // if (x && this.axis.x.type == 'category') {
+      //   x = 'category ' + x;
+      // }
+      if (isTimeseries && xAxisTickValueFormat) {
+        x = d3.time.format(xAxisTickValueFormat)(new Date(x));
+      }
+      // console.log(x);
+      return format ? format.replace(/\[\[x\]\]/g, x) : '';
+    });//.bind(c3config);
+   }
 };

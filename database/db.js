@@ -9,15 +9,10 @@ function insertUser(user) {
 		if (err) {
 			console.log('Unable to connect to the mongoDB server. Error:', err);
 		} else {
-			console.log('Connection established to', url);
-			/* get or create collection of users*/
 			var collection = db.collection("users");
-			/* create user */
-			/*insert user into collection*/
 			collection.find({
 				id: user.id
 			}).toArray(function(err, result) {
-				/* user is found */
 				console.log("length:", result.length);
 				if (!result.length) {
 					collection.insert(user, function(err, result) {
@@ -31,7 +26,6 @@ function insertUser(user) {
 				}
 			});
 		}
-
 	});
 }
 
@@ -45,19 +39,11 @@ function savePublicChart(chart) {
 			"name": chart.name,
 			"description": chart.description,
 			"public": chart['public'],
-		    "owner": chart.owner,
-		    "data": chart.data
+			"owner": chart.owner,
+			"data": chart.data
 		}, {
 			'upsert': true
 		});
-		/*collection.insert(chart, function(err, result) {
-			if (err) {
-				console.log(err);
-			} else {
-				console.log('Inserted documents into the "users" collection. The documents inserted with "_id" are:', result.length, result);
-				db.close();
-			}
-		});*/
 	});
 }
 
@@ -138,7 +124,6 @@ function getUserCharts(id, callback) {
 					console.log(result[i]);
 					charts.push(result[i]);
 				}
-				console.log("!!!!!!!!!!!charts" + charts);
 				callback(err, charts);
 				// }
 				db.close();
@@ -160,9 +145,7 @@ function getChartByUrl(chartUrl, callback) {
 				id: chartUrl
 			}).toArray(function(err, result) {
 				/* user is found */
-				console.log("Is user finded? : " + result.length);
 				var chart = result.length ? result[0] : undefined;
-				console.log("chart  :" + chart);
 				if (chart) {
 					callback(err, chart);
 				}
@@ -186,12 +169,12 @@ function deleteChart(id) {
 				if (err) {
 					console.log(err);
 				}
-				console.log(result);
 				db.close();
 			});
 		}
 	});
 }
+
 module.exports.insertUser = insertUser;
 module.exports.saveChart = saveChart;
 module.exports.checkСorrectness = checkСorrectness;

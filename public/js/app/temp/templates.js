@@ -106,8 +106,8 @@ var templates = {
   + '</div>',
   data:
     '<div class="data-view-header panel-heading">'
-  +   '<input class="btn btn-default" type="button" value="Add Column"> '
-  +   '<input class="btn btn-default" type="button" value="Add Row"> '
+  +   '<input class="btn btn-default" type="button" id="addcolumn" value="Add Column"> '
+  +   '<input class="btn btn-default" type="button" id="addrow" value="Add Row"> '
   // +   '<label class="btn btn-default data-import">Import<input id="data-file" type="file" accept=".csv,.tsv,.xls,.xlsx" style="display: none;"></label>' // ,.xlsm,.xlsb,.ods,.xml
   +   '<input class="btn btn-default data-import" id="data-file" type="file" accept=".csv,.tsv,.xls,.xlsx">' // ,.xlsm,.xlsb,.ods,.xml
   // +   '<label class="data-import">Add columns headers<input type="checkbox"></label>'
