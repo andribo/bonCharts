@@ -132,7 +132,7 @@ define(['backbone', 'model', 'bootstrap'], function (Backbone, Model) {
     },
     postFacebook: function () {
       var url = 'http://' + window.location.host + '/' + this.app.currentChart.id;
-      window.open('https://www.facebook.com/sharer/sharer.php?url=' + url);
+      window.open('https://www.facebook.com/sharer/sharer.php?u=' + url);
     },
     postTwitter: function () {
       var url = 'http://' + window.location.host + '/' + this.app.currentChart.id;
