@@ -138,7 +138,7 @@ body {
 
 .chartitem div {
   position: absolute;
-  display: none;
+  display: block;
   bottom: 0;
   left: 0;
   right: 0;
@@ -146,12 +146,12 @@ body {
   opacity: 0.8;
 }
 
-.chartitem:hover div {
+/*.chartitem:hover div {
   display: block;
-}
+}*/
 
 .chartitem:hover {
-  box-shadow: 0 0 2px #808080;
+  box-shadow: 0 0 3px #808080;
 }
 
 .select-chart-container .tab-content {
@@ -228,7 +228,6 @@ body {
   border: solid 1px #808080;
   border-radius: 5px;
   background-color: #ffffff;
-  background-image: url(../images/x.gif);
   display: none;
   cursor: pointer;
 }
@@ -241,8 +240,7 @@ body {
   height: 15px;
   border: solid 1px #808080;
   border-radius: 5px;
-  background-color: lime;
-  /*background-image: url(../images/circle_x_small.png) no-repeat;*/
+  background-color: #ffffff;
   display: none;
   cursor: pointer;
 }

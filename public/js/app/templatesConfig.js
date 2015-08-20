@@ -840,7 +840,8 @@ define([], function ()
       }
     ],
     grid: [
-      'Grid, Lines & Regions',
+      'Grid',
+      // 'Grid, Lines & Regions',
       {
         name: 'grid_x_show',
         type: 'checkbox',
@@ -848,37 +849,37 @@ define([], function ()
         def: false,
         description: ''
       },
-      {
-        name: 'grid_x_lines',
-        type: 'multi',
-        options: [
-        {
-          name: 'grid_x_lines_value',
-          type: 'number',
-          title: 'Value',
-          description: ''
-        },
-        {
-          name: 'grid_x_lines_text',
-          type: 'text',
-          title: 'Text',
-          description: ''
-        },
-        {
-          name: 'grid_x_lines_position',
-          type: 'select',
-          title: 'Position',
-          options: ['start', 'middle', 'end'],
-          description: ''
-        },
-        {
-          name: 'grid_x_lines_class',
-          type: 'text',
-          title: 'CSS Class',
-          description: ''
-        }],
-        description: ''
-      },
+      // {
+      //   name: 'grid_x_lines',
+      //   type: 'multi',
+      //   options: [
+      //   {
+      //     name: 'grid_x_lines_value',
+      //     type: 'number',
+      //     title: 'Value',
+      //     description: ''
+      //   },
+      //   {
+      //     name: 'grid_x_lines_text',
+      //     type: 'text',
+      //     title: 'Text',
+      //     description: ''
+      //   },
+      //   {
+      //     name: 'grid_x_lines_position',
+      //     type: 'select',
+      //     title: 'Position',
+      //     options: ['start', 'middle', 'end'],
+      //     description: ''
+      //   },
+      //   {
+      //     name: 'grid_x_lines_class',
+      //     type: 'text',
+      //     title: 'CSS Class',
+      //     description: ''
+      //   }],
+      //   description: ''
+      // },
       {
         name: 'grid_y_show',
         type: 'checkbox',
@@ -886,68 +887,68 @@ define([], function ()
         def: false,
         description: ''
       },
-      {
-        name: 'grid_y_lines',
-        type: 'multi',
-        options: [
-        {
-          name: 'grid_y_lines_value',
-          type: 'number',
-          title: 'Value',
-          description: ''
-        },
-        {
-          name: 'grid_y_lines_text',
-          type: 'text',
-          title: 'Text',
-          description: ''
-        },
-        {
-          name: 'grid_y_lines_position',
-          type: 'select',
-          title: 'Position',
-          options: ['start', 'middle', 'end'],
-          description: ''
-        },
-        {
-          name: 'grid_y_lines_class',
-          type: 'text',
-          title: 'CSS Class',
-          description: ''
-        }],
-        description: ''
-      },
-      {
-        name: 'regions',
-        type: 'multi',
-        options: [
-        {
-          name: 'regions_axis',
-          type: 'select',
-          title: 'Axis',
-          options: ['x', 'y', 'y2'],
-          description: ''
-        },
-        {
-          name: 'regions_start',
-          type: 'number',
-          title: 'Start',
-          description: ''
-        },
-        {
-          name: 'regions_end',
-          type: 'text',
-          title: 'End',
-          description: ''
-        },
-        {
-          name: 'regions_class',
-          type: 'text',
-          title: 'CSS Class',
-          description: ''
-        }],
-        description: ''
-      }
+      // {
+      //   name: 'grid_y_lines',
+      //   type: 'multi',
+      //   options: [
+      //   {
+      //     name: 'grid_y_lines_value',
+      //     type: 'number',
+      //     title: 'Value',
+      //     description: ''
+      //   },
+      //   {
+      //     name: 'grid_y_lines_text',
+      //     type: 'text',
+      //     title: 'Text',
+      //     description: ''
+      //   },
+      //   {
+      //     name: 'grid_y_lines_position',
+      //     type: 'select',
+      //     title: 'Position',
+      //     options: ['start', 'middle', 'end'],
+      //     description: ''
+      //   },
+      //   {
+      //     name: 'grid_y_lines_class',
+      //     type: 'text',
+      //     title: 'CSS Class',
+      //     description: ''
+      //   }],
+      //   description: ''
+      // },
+      // {
+      //   name: 'regions',
+      //   type: 'multi',
+      //   options: [
+      //   {
+      //     name: 'regions_axis',
+      //     type: 'select',
+      //     title: 'Axis',
+      //     options: ['x', 'y', 'y2'],
+      //     description: ''
+      //   },
+      //   {
+      //     name: 'regions_start',
+      //     type: 'number',
+      //     title: 'Start',
+      //     description: ''
+      //   },
+      //   {
+      //     name: 'regions_end',
+      //     type: 'text',
+      //     title: 'End',
+      //     description: ''
+      //   },
+      //   {
+      //     name: 'regions_class',
+      //     type: 'text',
+      //     title: 'CSS Class',
+      //     description: ''
+      //   }],
+      //   description: ''
+      // }
     ],
     series: [
       'Series',
