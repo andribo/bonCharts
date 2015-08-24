@@ -505,7 +505,7 @@ var bonCharts = {
             if (model.data_y && model[prop]) {
               // c3config.data.xs = c3config.data.xs || {};
               c3config.data.xs[model.data_y] = model[prop];
-              // console.log(c3config.data.xs);
+              // // console.log(c3config.data.xs);
             }
             break;
           case 'data_y2':
@@ -570,9 +570,9 @@ var bonCharts = {
         c3config.data.x = value;
       }
     }
-    // console.log(c3config.data.xs);
+    // // console.log(c3config.data.xs);
     // window.c3config = c3config;
-    // console.log(JSON.stringify(c3config));
+    // // console.log(JSON.stringify(c3config));
     return c3config;
   },
   resize: function () {
@@ -605,7 +605,7 @@ var bonCharts = {
       if (isTimeseries && xAxisTickValueFormat) {
         x = d3.time.format(xAxisTickValueFormat)(new Date(x));
       }
-      // console.log(x);
+      // // console.log(x);
       return format ? format.replace(/\[\[x\]\]/g, x) : '';
     });//.bind(c3config);
    }

@@ -23,7 +23,7 @@ define(['backbone', 'model', 'view', 'templatesConfig'], function (Backbone, Mod
               $('#unlogined').css('display', 'block');
               $('#logined').css('display', 'none');
             }
-          // console.log(that.app.user);
+          // // console.log(that.app.user);
         },
         error: function(a, b, c) {
           alert("Error" + a + b + c);

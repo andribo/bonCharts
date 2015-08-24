@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
 
+<head>
   <meta charset="utf-8" /> 
   <meta property="og:title" content="<%= chartName %>"/>
   <meta property="og:url" content="http://localhost/"/>
   <meta property="og:site_name" content="bonCharts"/>
-  <meta property="og:description"
-        content="<%= chartDescription %>"/>
+  <meta property="og:description" content="<%= chartDescription %>"/>
   <link rel="stylesheet" href="css/c3.css">
   <link rel="stylesheet" href="css/c3OwnStyle.css">
   <title><%= chartName %></title>
@@ -20,21 +19,22 @@
     }
   </style>
 </head>
+
 <body>
-<div id="bonchart"></div>
-<% if(!isPublic) {%>
-  <div>Data is not public</div>
- <%} %>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="js/lib/d3.js"></script>
-  <script src="js/lib/c3.min.js"></script>
-  <script src="js/app/bonCharts.js"></script>
-  <script type="text/javascript">
-  <% if(isPublic) { %>
-  var data = JSON.parse('<%-chartData %>'),
-    chart = c3.generate(bonCharts.toC3(data));
-    chart.resize({height: $(chart.element).parent().height() - 10});
-  <% } %>
-</script>
+  <div id="bonchart"></div>
+  <% if(!isPublic) {%>
+    <div>Data is not public</div>
+   <%} %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/lib/d3.js"></script>
+    <script src="js/lib/c3.min.js"></script>
+    <script src="js/app/bonCharts.js"></script>
+    <script type="text/javascript">
+    <% if(isPublic) { %>
+    var data = JSON.parse('<%-chartData %>'),
+      chart = c3.generate(bonCharts.toC3(data));
+      chart.resize({height: $(chart.element).parent().height() - 10});
+    <% } %>
+  </script>
 </body>
 </html>

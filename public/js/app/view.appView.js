@@ -1,7 +1,7 @@
 define(['backbone', 'model', 'bootstrap'], function(Backbone, Model) {
   return Backbone.View.extend({
     initialize: function(options) {
-      console.log("INITCCC")
+      // console.log("INITCCC")
       this.el = options.el;
       this.$content = this.$el.find('#content')
       this.template = _.template(options.template);
@@ -60,7 +60,7 @@ define(['backbone', 'model', 'bootstrap'], function(Backbone, Model) {
           that.app.user = user;
 
           // that.app.user = data;
-          console.log(that.app.user);
+          // console.log(that.app.user);
           if (!that.app.user.id) {
             alert("Wrong email or password");
           } else {
@@ -132,7 +132,7 @@ define(['backbone', 'model', 'bootstrap'], function(Backbone, Model) {
       var publicChart = $('#chartPublic').prop('checked');
       var data = this.app.models.chartSettings.toJSON();
       var id = this.app.currentChart.id;
-      console.log(owner, this.app.currentChart.owner, id);
+      // console.log(owner, this.app.currentChart.owner, id);
       if (owner !== this.app.currentChart.owner) {
         id = this.generateUniqueID();
       }
@@ -160,11 +160,11 @@ define(['backbone', 'model', 'bootstrap'], function(Backbone, Model) {
     },
     selectChart: function(e) {
       var self = this;
-      console.log('/charts/' + e.currentTarget.id);
+      // console.log('/charts/' + e.currentTarget.id);
       $.ajax({
         url: '/charts/' + e.currentTarget.id,
         success: function(result) {
-          console.log(result);
+          // console.log(result);
           var chartData = JSON.parse(result);
           self.app.currentChart.name = chartData.name;
           self.app.currentChart.description = chartData.description;
@@ -177,13 +177,13 @@ define(['backbone', 'model', 'bootstrap'], function(Backbone, Model) {
           });
         },
         error: function(jqXHR, textStatus, errorThrown) {
-          console.log(jqXHR, textStatus, errorThrown);
+          // console.log(jqXHR, textStatus, errorThrown);
         }
       });
     },
     selectChartType: function(e) {
       // e.preventDefault();
-      // console.log(this);
+      // // console.log(this);
       // $(this).tab('show');
     },
     selectChartCancel: function() {

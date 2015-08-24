@@ -18,7 +18,7 @@ define(['backbone'], function (Backbone) {
     },
     setProperty: function (e) {
       var value;
-      console.log(e.target.id, e.target.type, 'change event');
+      // console.log(e.target.id, e.target.type, 'change event');
       switch (e.target.type) {
         case 'checkbox':
           this.model.set(e.target.id, e.target.checked);

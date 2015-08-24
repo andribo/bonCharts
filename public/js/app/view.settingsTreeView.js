@@ -50,14 +50,14 @@ define(['backbone', 'settingsView'], function (Backbone, SettingsView) {
       }
     },
     addSeries: function (e) {
-    	this.collection.add(this.collection.defaultSeries());
+      this.collection.add(this.collection.defaultSeries());
     },
     deleteSeries: function (e) {
-    	var seriesName = e.target.id.substring(13);
-    	this.collection.remove(this.collection.getModelByName(seriesName));
-    	if (this.settingsView.name === seriesName) {
-    		this.changeSettingsView({ target: { id: 'miscellaneous'}});
-    	}
+      var seriesName = e.target.id.substring(13);
+      this.collection.remove(this.collection.getModelByName(seriesName));
+      if (this.settingsView.name === seriesName) {
+        this.changeSettingsView({ target: { id: 'miscellaneous'}});
+      }
     },
     changeChartType: function () {
       var type = this.collection.getModelByName('miscellaneous').get('chart_data_type');

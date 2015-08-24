@@ -28,34 +28,6 @@ var templates = {
   +     '<% } %>'
   +   '<% }); %>'
   + '</ul>',
-  // + '</div>',
-  // + '</nav>',
-  //   '<ul>'
-  // +   '<% _.each(settingsTree, function(elem) { %>'
-  // +     '<% if (!elem.hidden) { %>'
-  // +       '<li id="<%=elem.name%>" class="settings-tree-item">'
-  // +          '<%= elem.text || settings[elem.name][0] %>'
-  // +          '<% if(elem.name === "series") { %>'
-  // +            '<input type="button" id="addseries" class="add-series-btn" value="+">'
-  // +         '<% } %>'
-  // +         '<% if(elem.items) { %>'
-  // +           '<ul>'
-  // +             '<% _.each(elem.items, function(item) { %>'
-  // +               '<% if (!item.hidden) { %>'
-  // +                 '<li id="<%= item.name %>" class="settings-tree-item">'
-  // +                    '<%= settings[item.name] ? settings[item.name][0] : item.name %>'
-  // +                    '<% if(elem.name === "series") { %>'
-  // +                      '<input type="button" id="deleteseries-<%= item.name %>" class="delete-series-btn" value="-">'
-  // +                  '<% } %>'
-  // +                  '</li>'
-  // +               '<% } %>'
-  // +             '<% }); %>'
-  // +           '</ul>'
-  // +         '<% } %>'
-  // +       '</li>'
-  // +     '<% } %>'
-  // +   '<% }); %>'
-  // + '</ul>',
   settings: 
     '<div class="panel-heading"><h3 class="panel-title"><%= settings[0] %></h3></div>'
   + '<div class="settings-body">'    //  class="panel-body"

@@ -1,66 +1,70 @@
 <style>
-  .chartHeaders {
-    position: relative;
-    top: 50%;
-    left: 35%;
-  }
+.chartHeaders {
+  position: relative;
+  top: 50%;
+  left: 35%;
+}
 </style>
 <div class="jumbotron" style="background-color: #3c948b">
   <div class="container" id="jumboMain">
     <h1>Bon Charts!</h1>
     <p>This project is about creating dynamic interactive charts. You can: create new charts, save and edit existing charts, share with friends existing charts. Enjoy!</p>
-    <p><button type="button" id="makechart" class="btn btn-primary btn-lg" role="button">Make Chart</button></p>
+    <p>
+      <button type="button" id="makechart" class="btn btn-primary btn-lg" role="button">Make Chart</button>
+    </p>
   </div>
 </div>
 <div class="container marketing">
-
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-lg-4 col-xs-6" class='types'>
-          <img class="img-thumbnail chartsImg"  src="/images/bar.png" alt="Generic placeholder image" width="165" height="165">
-          <h2 class="text-center">Bar</h2>
-          <p>Bar chart is a chart when bars of a different graphs are placed next to each another, and not stacked one on another, so basically it’s the most simple bar chart with two graphs in it.</p>
-         <!--  <p><a class="btn btn-default" href="#" role="button">View details »</a></p> -->
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4 col-xs-6" class='types'>
-          <img class="img-thumbnail chartsImg" src="/images/newarea.png" alt="Generic placeholder image" width="165" height="165">
-          <h2 class="text-center">Line</h2>
-          <p>All our serial charts (and actually XY chart too) can be zoomed-in, scrolled and panned. All you have to do is add a scrollbar to the chart. This is one of the most important features of charts, especially when dealing with large data sets.</p>
-          <!-- <p><a class="btn btn-default" href="#" role="button">View details »</a></p> -->
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4 col-xs-6" class='types'>
-          <img class="img-thumbnail chartsImg" src="/images/newline.png" alt="Generic placeholder image" width="165" height="165">
-          <h2 class="text-center">Area</h2>
-          <p>Technically, area graph is just a regular line graph with fill opacity set to some bigger than 0 value. This means you can easily switch from area to line only by modifying this property. You can also define which of the graphs are hidden by default.</p>
-         <!--  <p><a class="btn btn-default" href="#" role="button">View details »</a></p> -->
-        </div><!-- /.col-lg-4 -->
-      <!-- /.row -->
-      
-        <div class="col-lg-4 col-xs-6" class='types'>
-          <img class="img-thumbnail chartsImg"  src="/images/pie.png" alt="Generic placeholder image" width="165" height="165">
-          <h2 class="text-center">Pie</h2>
-          <p>Our pie chart uses intelligent way to arrange it’s labels so that they would not overlap. You can try adding even more labels by pressing EDIT button and adding more items to the data provider – the labels will be arranged so that they wouldn’t overlap.</p>
-          <!-- <p><a class="btn btn-default" href="#" role="button">View details »</a></p> -->
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4 col-xs-6" class='types'>
-          <img class="img-thumbnail chartsImg" src="/images/donut.png" alt="Generic placeholder image" width="165" height="165">
-          <h2 class="text-center">Donut</h2>
-          <p>Donut or Doughnut chart is just a simple pie chart with a hole inside. You can define hole radius to any size you need, both in percent or pixels.</p>
-         <!--  <p><a class="btn btn-default" href="#" role="button">View details »</a></p> -->
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4 col-xs-6" class='types'>
-          <img class="img-thumbnail chartsImg" src="/images/other.png" alt="Generic placeholder image" width="165" height="165">
-          <h2 class="text-center">Scatter</h2>
-          <p>A scatter plot, scatterplot, or scattergraph is a type of mathematical diagram using Cartesian coordinates to display values for typically two variables for a set of data.</p>
-        <!--   <p><a class="btn btn-default" href="#" role="button">View details »</a></p> -->
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
-
-      <br/>
-      <hr/>
-      <footer>
-        
-        <p>© 2015 Epam · FrontendLab3 · bonCharts</p>
-      </footer>
-
+  <!-- Three columns of text below the carousel -->
+  <div class="row">
+    <div class="col-lg-4 col-xs-6" class='types'>
+      <img class="img-thumbnail chartsImg" src="/images/bar.png" alt="Generic placeholder image" width="165" height="165">
+      <h2 class="text-center">Bar</h2>
+      <p>Bar chart is a chart when bars of a different graphs are placed next to each another, and not stacked one on another, so basically it’s the most simple bar chart with two graphs in it.</p>
+      <!--  <p><a class="btn btn-default" href="#" role="button">View details »</a></p> -->
     </div>
+    <!-- /.col-lg-4 -->
+    <div class="col-lg-4 col-xs-6" class='types'>
+      <img class="img-thumbnail chartsImg" src="/images/newarea.png" alt="Generic placeholder image" width="165" height="165">
+      <h2 class="text-center">Line</h2>
+      <p>All our serial charts (and actually XY chart too) can be zoomed-in, scrolled and panned. All you have to do is add a scrollbar to the chart. This is one of the most important features of charts, especially when dealing with large data sets.</p>
+      <!-- <p><a class="btn btn-default" href="#" role="button">View details »</a></p> -->
+    </div>
+    <!-- /.col-lg-4 -->
+    <div class="col-lg-4 col-xs-6" class='types'>
+      <img class="img-thumbnail chartsImg" src="/images/newline.png" alt="Generic placeholder image" width="165" height="165">
+      <h2 class="text-center">Area</h2>
+      <p>Technically, area graph is just a regular line graph with fill opacity set to some bigger than 0 value. This means you can easily switch from area to line only by modifying this property. You can also define which of the graphs are hidden by default.</p>
+      <!--  <p><a class="btn btn-default" href="#" role="button">View details »</a></p> -->
+    </div>
+    <!-- /.col-lg-4 -->
+    <!-- /.row -->
+    <div class="col-lg-4 col-xs-6" class='types'>
+      <img class="img-thumbnail chartsImg" src="/images/pie.png" alt="Generic placeholder image" width="165" height="165">
+      <h2 class="text-center">Pie</h2>
+      <p>Our pie chart uses intelligent way to arrange it’s labels so that they would not overlap. You can try adding even more labels by pressing EDIT button and adding more items to the data provider – the labels will be arranged so that they wouldn’t overlap.</p>
+      <!-- <p><a class="btn btn-default" href="#" role="button">View details »</a></p> -->
+    </div>
+    <!-- /.col-lg-4 -->
+    <div class="col-lg-4 col-xs-6" class='types'>
+      <img class="img-thumbnail chartsImg" src="/images/donut.png" alt="Generic placeholder image" width="165" height="165">
+      <h2 class="text-center">Donut</h2>
+      <p>Donut or Doughnut chart is just a simple pie chart with a hole inside. You can define hole radius to any size you need, both in percent or pixels.</p>
+      <!--  <p><a class="btn btn-default" href="#" role="button">View details »</a></p> -->
+    </div>
+    <!-- /.col-lg-4 -->
+    <div class="col-lg-4 col-xs-6" class='types'>
+      <img class="img-thumbnail chartsImg" src="/images/other.png" alt="Generic placeholder image" width="165" height="165">
+      <h2 class="text-center">Scatter</h2>
+      <p>A scatter plot, scatterplot, or scattergraph is a type of mathematical diagram using Cartesian coordinates to display values for typically two variables for a set of data.</p>
+      <!--   <p><a class="btn btn-default" href="#" role="button">View details »</a></p> -->
+    </div>
+    <!-- /.col-lg-4 -->
+  </div>
+  <!-- /.row -->
+  <br/>
+  <hr/>
+  <footer>
+    <p>© 2015 Epam · FrontendLab3 · bonCharts</p>
+  </footer>
+</div>

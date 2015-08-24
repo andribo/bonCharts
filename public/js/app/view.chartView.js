@@ -20,7 +20,7 @@ define(['backbone', 'c3', 'bonCharts'], function (Backbone, c3, bonCharts) {
       $('#chartName').val(this.app.currentChart.name);
       $('#chartDescription').val(this.app.currentChart.description);
       $('#chartPublic').prop('checked', this.app.currentChart['public']);
-      console.log(this.app.currentChart);
+      // console.log(this.app.currentChart);
     },
     render: function () {
       clearTimeout(this.timeOut);
@@ -41,7 +41,7 @@ define(['backbone', 'c3', 'bonCharts'], function (Backbone, c3, bonCharts) {
              height: $chartContainerElement.parent().height() - 10
           });
         } catch (error) {
-          console.log(error);
+          // console.log(error);
         }
       }).bind(this), 500);
     }
