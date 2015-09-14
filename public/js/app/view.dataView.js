@@ -1,4 +1,3 @@
-// ------------------------------------------------------------------------
 define(['backbone', 'd3', 'xlsx'], function (Backbone, d3, XLSX) {
   return Backbone.View.extend({
     initialize: function (options) {

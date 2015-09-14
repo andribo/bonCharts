@@ -1,4 +1,3 @@
-// В'юшка для побудови дерева налаштувань
 define(['backbone', 'settingsView'], function (Backbone, SettingsView) {
   return Backbone.View.extend({
     initialize: function (options) {

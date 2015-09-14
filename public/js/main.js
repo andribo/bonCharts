@@ -1,11 +1,6 @@
 requirejs.config({
   baseUrl: 'js/app',
  shim: {
-  // jquery: { exports: '$' },
-  // underscore: { exports: '_' },
-  // backbone: { exports: 'Backbone' },
-  // d3: { exports: 'd3' },
-  // c3: { exports: 'c3' },
   bootstrap: { deps: ['jquery']},
   xlsx: { exports: 'XLSX'},
   bonCharts: { exports: 'bonCharts'}

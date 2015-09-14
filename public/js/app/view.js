@@ -13,6 +13,6 @@ define([
     view.SettingsView = SettingsView;
     view.ChartView = ChartView;
     view.DataView = DataView;
-    return view; // вертаємо об'єкт з конструкторами наших в'юшок
+    return view;
   }
 );

@@ -1,6 +1,3 @@
-// В'юшка для побудови графіка
-// Ця в'юшка реагує на зміну нашої моделі (точніше, колекції моделей, але то не суттєво) і перерисовує графік.
-// Щоб перетворити дані з моделі в налаштування графіка, викликається метод configureChart
 define(['backbone', 'c3', 'bonCharts'], function (Backbone, c3, bonCharts) {
   return Backbone.View.extend({
     initialize: function (options) {

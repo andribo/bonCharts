@@ -1,4 +1,3 @@
-// В'юшка для побудови області з конкретними налаштуваннями
 define(['backbone'], function (Backbone) {
   return Backbone.View.extend({
     tagName: 'div',

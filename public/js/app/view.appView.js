@@ -31,7 +31,7 @@ define(['backbone', 'model', 'bootstrap'], function(Backbone, Model) {
       }
     },
     events: {
-      'click #makechart': 'makeChart',
+      'click #makechartbtn': 'makeChart',
       'click .chartitem': 'selectChart',
       'click #selectchartcancel': 'selectChartCancel',
       'click #charttabs a': 'selectChartType',
